@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "F5975Q+PpQVWb+qpwI0jn7LePID1EQoeRhkZtsvexsdvihX9rzsrpOtTFuk0JCuyrPL+b6rN8PtSjNoEhHzmag==",
+  "dgSpecHash": "/A8bG0CXPUD2WxS8KHTLa3MRJ3Sw/0pFk2O5/bv64F8aH4uSGXNgsJbDZa599e9oL7r7TWc/0ZrEDLgjr1+FMg==",
   "success": true,
   "projectFilePath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Application/ClinicAPI.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/mcbook/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/fluentvalidation/10.3.6/fluentvalidation.10.3.6.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/9.0.0/mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/Users/mcbook/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

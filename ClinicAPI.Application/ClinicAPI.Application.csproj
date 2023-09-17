@@ -6,4 +6,50 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Users\" />
+    <None Remove="Users\Command\" />
+    <None Remove="Users\Query\" />
+    <None Remove="Users\Command\CreateDoctor\" />
+    <None Remove="Users\Command\CreateClient\" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Mappings\" />
+    <None Remove="FluentValidation" />
+    <None Remove="Users\Command\SendTempCode\" />
+    <None Remove="Users\Query\GetDoctors\" />
+    <None Remove="Users\Query\GetUserDetails\" />
+    <None Remove="Category\" />
+    <None Remove="Category\Query\" />
+    <None Remove="Category\Query\GetCategories\" />
+    <None Remove="Appointments\" />
+    <None Remove="Appointments\Command\" />
+    <None Remove="Appointments\Query\" />
+    <None Remove="Appointments\Command\CreateAppointment\" />
+    <None Remove="Appointments\Command\DeleteAppointment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Users\" />
+    <Folder Include="Users\Command\" />
+    <Folder Include="Users\Query\" />
+    <Folder Include="Users\Command\CreateDoctor\" />
+    <Folder Include="Users\Command\CreateClient\" />
+    <Folder Include="Mappings\" />
+    <Folder Include="Users\Command\SendTempCode\" />
+    <Folder Include="Users\Query\GetDoctors\" />
+    <Folder Include="Users\Query\GetUserDetails\" />
+    <Folder Include="Category\" />
+    <Folder Include="Category\Query\" />
+    <Folder Include="Category\Query\GetCategories\" />
+    <Folder Include="Appointments\" />
+    <Folder Include="Appointments\Command\" />
+    <Folder Include="Appointments\Query\" />
+    <Folder Include="Appointments\Command\CreateAppointment\" />
+    <Folder Include="Appointments\Command\DeleteAppointment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="FluentValidation" Version="10.3.6" />
+  </ItemGroup>
 </Project>
