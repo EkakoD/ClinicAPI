@@ -8,7 +8,7 @@ namespace ClinicAPI.Application.Users.Command.CreateClient
         public string PersonalNumber { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string ActivateCode { get; set; }
+        public int? RoleId { get; set; }
     }
 }
 

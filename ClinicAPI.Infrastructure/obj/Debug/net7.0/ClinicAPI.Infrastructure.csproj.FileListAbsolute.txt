@@ -1,0 +1,12 @@
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/bin/Debug/net7.0/ClinicAPI.Infrastructure.deps.json
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/bin/Debug/net7.0/ClinicAPI.Infrastructure.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/bin/Debug/net7.0/ClinicAPI.Infrastructure.pdb
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/ClinicAPI.Infrastructure.csproj.AssemblyReference.cache
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/ClinicAPI.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/ClinicAPI.Infrastructure.AssemblyInfoInputs.cache
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/ClinicAPI.Infrastructure.AssemblyInfo.cs
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/ClinicAPI.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/ClinicAPI.Infrastructure.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/refint/ClinicAPI.Infrastructure.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/ClinicAPI.Infrastructure.pdb
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/Debug/net7.0/ref/ClinicAPI.Infrastructure.dll

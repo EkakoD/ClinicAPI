@@ -8,8 +8,14 @@
 
   <ItemGroup>
     <None Remove="System.Data.SqlClient" />
+    <None Remove="Repositories\" />
+    <None Remove="Microsoft.Extensions.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
 </Project>

@@ -1,18 +1,73 @@
 ﻿<Properties StartupConfiguration="{58F068EB-F236-4803-90A4-CF658A26426D}|https">
+  <MonoDevelop.Ide.ItemProperties.ClinicAPi.Presentation.Api PreferredExecutionTarget="/Users/mcbook/Desktop/Q.app" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ClinicAPI.Application/Appointments/Query/GetAppointmentTimes/GetAppointmentTimesHandler.cs">
+    <Files>
+      <File FileName="ClinicAPI.Infrastructure/Repositories/ClinicRepositories.cs" Line="30" Column="85" />
+      <File FileName="ClinicAPi.Presentation.Api/appsettings.Development.json" Line="4" Column="20" />
+      <File FileName="ClinicAPI.Application/Users/Command/CreateClient/CreateClientModel.cs" Line="6" Column="9" />
+      <File FileName="ClinicAPI.Application/Users/Command/CreateClient/CreateClientCommand.cs" Line="7" Column="77" />
+      <File FileName="ClinicAPI.Application/Users/Command/CreateClient/CreateClientModelValidator.cs" Line="15" Column="66" />
+      <File FileName="ClinicAPI.Application/DependencyInjection.cs" Line="16" Column="2" />
+      <File FileName="ClinicAPI.Application/Mappings/IMapFrom.cs" Line="3" Column="32" />
+      <File FileName="ClinicAPI.Application/Mappings/MapFrom.cs" Line="3" Column="33" />
+      <File FileName="ClinicAPI.Application/Mappings/MappingProfile.cs" Line="10" Column="1" />
+      <File FileName="ClinicAPI.Application/Users/Command/CreateDoctor/CreateDoctorModel.cs" Line="12" Column="34" />
+      <File FileName="ClinicAPI.Application/Users/Command/CreateDoctor/CreateDoctorCommand.cs" Line="7" Column="80" />
+      <File FileName="ClinicAPI.Application/Users/Command/CreateDoctor/CreateDoctorModelValidator.cs" Line="6" Column="64" />
+      <File FileName="ClinicAPI.Application/Users/Command/CreateDoctor/CreateDoctorCommandHandler.cs" Line="6" Column="3" />
+      <File FileName="ClinicAPI.Application/Users/Command/SendTempCode/SendTempCodeModel.cs" Line="6" Column="11" />
+      <File FileName="ClinicAPI.Application/Users/Command/SendTempCode/SendTempCodeCommand.cs" Line="7" Column="74" />
+      <File FileName="ClinicAPI.Application/Users/Command/SendTempCode/SendTempCodeCommandHandler.cs" Line="1" Column="1" />
+      <File FileName="ClinicAPI.Application/Users/Command/SendTempCode/SendTempCodeModelValidator.cs" Line="16" Column="1" />
+      <File FileName="ClinicAPI.Application/Users/Query/GetDoctors/GetDoctorsModel.cs" Line="11" Column="40" />
+      <File FileName="ClinicAPI.Application/Users/Query/GetDoctors/GetDoctorsQuery.cs" Line="13" Column="1" />
+      <File FileName="ClinicAPI.Application/Users/Query/GetDoctors/GetDoctorsQueryHandler.cs" Line="6" Column="3" />
+      <File FileName="ClinicAPI.Application/Users/Query/GetUserDetails/UserDetailsModel.cs" Line="17" Column="1" />
+      <File FileName="ClinicAPI.Application/Users/Query/GetUserDetails/GetUserDetailsQuery.cs" Line="6" Column="40" />
+      <File FileName="ClinicAPI.Application/Users/Query/GetUserDetails/GetUserDetailsQueryHandler.cs" Line="9" Column="3" />
+      <File FileName="ClinicAPI.Application/Users/Command/CreateClient/CreateClientCommandHandler.cs" Line="1" Column="1" />
+      <File FileName="ClinicAPI.Application/Category/Query/GetCategories/GetCategoriesQuery.cs" Line="12" Column="1" />
+      <File FileName="ClinicAPI.Application/Category/Query/GetCategories/GetCategoriesQueryHandler.cs" Line="6" Column="3" />
+      <File FileName="ClinicAPI.Application/Category/Query/GetCategories/CategoriesModel.cs" Line="11" Column="1" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/CreateAppointment/CreateAppointmentModel.cs" Line="10" Column="44" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/CreateAppointment/CreateAppointmentCommand.cs" Line="7" Column="86" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/CreateAppointment/CreateAppointmentCommandHandler.cs" Line="1" Column="1" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/CreateAppointment/CreateAppointmentModelValidator.cs" Line="18" Column="1" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/DeleteAppointment/DeleteAppointmentModel.cs" Line="6" Column="15" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/DeleteAppointment/DeleteAppointmentCommand.cs" Line="7" Column="81" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/DeleteAppointment/DeleteAppointmentModelValidator.cs" Line="1" Column="1" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/DeleteAppointment/DeleteAppointmentCommandHandler.cs" Line="1" Column="1" />
+      <File FileName="ClinicAPi.Presentation.Api/Controllers/UsersController.cs" Line="1" Column="1" />
+      <File FileName="ClinicAPi.Presentation.Api/Controllers/AppointmentsController.cs" Line="12" Column="6" />
+      <File FileName="ClinicAPI.Application/Appointments/Query/GetAppointmentTimes/GetAppointmentTimesHandler.cs" Line="1" Column="1" />
+      <File FileName="ClinicAPi.Presentation.Api/appsettings.json" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ClinicAPI" expanded="True" />
+          <Node name="ClinicAPI" expanded="True">
+            <Node name="ClinicAPI.Application" expanded="True">
+              <Node name="Appointments" expanded="True">
+                <Node name="Query" expanded="True">
+                  <Node name="GetAppointmentTimes" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="ClinicAPI.Infrastructure" expanded="True">
+              <Node name="Repositories" expanded="True" />
+            </Node>
+            <Node name="ClinicAPi.Presentation.Api" expanded="True">
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.ClinicAPi.Presentation.Api PreferredExecutionTarget="/Users/mcbook/Desktop/Q.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

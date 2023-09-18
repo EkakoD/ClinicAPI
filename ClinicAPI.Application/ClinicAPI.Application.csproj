@@ -27,6 +27,8 @@
     <None Remove="Appointments\Query\" />
     <None Remove="Appointments\Command\CreateAppointment\" />
     <None Remove="Appointments\Command\DeleteAppointment\" />
+    <None Remove="Appointments\Query\GetAppointmentTimes\" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Users\" />
@@ -46,10 +48,15 @@
     <Folder Include="Appointments\Query\" />
     <Folder Include="Appointments\Command\CreateAppointment\" />
     <Folder Include="Appointments\Command\DeleteAppointment\" />
+    <Folder Include="Appointments\Query\GetAppointmentTimes\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="FluentValidation" Version="10.3.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClinicAPI.Infrastructure\ClinicAPI.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

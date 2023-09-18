@@ -25,7 +25,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj": {
+                "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -105,6 +109,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
