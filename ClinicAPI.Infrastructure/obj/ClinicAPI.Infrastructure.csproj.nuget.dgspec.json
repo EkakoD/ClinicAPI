@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj": {}
+    "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj": {
+    "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj",
+        "projectUniqueName": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
         "projectName": "ClinicAPI.Infrastructure",
-        "projectPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\SOFTX-01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\obj\\",
+        "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
+        "packagesPath": "/Users/mcbook/.nuget/packages/",
+        "outputPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SOFTX-01\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/mcbook/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
