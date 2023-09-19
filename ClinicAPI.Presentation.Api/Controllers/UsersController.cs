@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using ClinicAPI.Application.Users.Command.CreateClient;
+using ClinicAPI.Application.Users.Command.CreateDoctor;
+using ClinicAPI.Application.Users.Command.SendTempCode;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +22,23 @@ namespace ClinicAPi.Presentation.Api.Controllers
         }
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult> Create([FromBody] CreateClientCommand model)
+        public async Task<ActionResult> CreateClient([FromBody] CreateClientCommand model)
+        {
+            var result = await _mediator.Send(model);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult> CreateDoctor([FromBody] CreateDoctorCommand model)
+        {
+            var result = await _mediator.Send(model);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult> SendTempCode([FromBody] SendTempCodeCommand model)
         {
             var result = await _mediator.Send(model);
             return Ok(result);

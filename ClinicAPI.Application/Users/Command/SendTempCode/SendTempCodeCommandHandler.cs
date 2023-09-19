@@ -1,4 +1,6 @@
-﻿using ClinicAPI.Infrastructure.Repositories;
+﻿using ClinicAPI.Infrastructure.Models;
+using ClinicAPI.Infrastructure.NotificationService;
+using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
 using System;
 namespace ClinicAPI.Application.Users.Command.SendTempCode
@@ -6,9 +8,11 @@ namespace ClinicAPI.Application.Users.Command.SendTempCode
     public class SendTempCodeCommandHandler : IRequestHandler<SendTempCodeCommand>
     {
         private IBaseRepository<SendTempCodeModel> _repository;
-        public SendTempCodeCommandHandler(IBaseRepository<SendTempCodeModel> repository)
+        private INotificationService _notification;
+        public SendTempCodeCommandHandler(IBaseRepository<SendTempCodeModel> repository, INotificationService notification)
         {
             _repository = repository;
+            _notification = notification;
         }
 
         public async Task<Unit> Handle(SendTempCodeCommand request, CancellationToken cancellationToken)
@@ -17,7 +21,7 @@ namespace ClinicAPI.Application.Users.Command.SendTempCode
 
             int code = random.Next(1000, 10000);
 
-            string codeString = code.ToString("D4");
+            var codeString = code.ToString();
             var createDate = DateTime.Now;
             var model = new SendTempCodeModel
             {
@@ -25,10 +29,15 @@ namespace ClinicAPI.Application.Users.Command.SendTempCode
                 Code = codeString,
                 CreateDate = createDate
             };
+            _repository.Create("Users", "[dbo].[CreateTempCode]", model);
 
-            _repository.Create("Users", "[dbo].[CreateDoctor]", model);
-            //აქ უნდა გავაგზავნო მეილზე მესიჯი
+            EmailModel emailModel = new EmailModel
+            {
+                Email = request.Email,
+                Code = codeString,
+            };
 
+            await _notification.SendEmailAsync(emailModel);
             return Unit.Value;
         }
     }

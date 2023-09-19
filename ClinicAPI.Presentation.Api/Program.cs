@@ -2,6 +2,7 @@ using System.Reflection;
 using ClinicAPI.Application;
 using ClinicAPI.Application.Services;
 using ClinicAPI.Application.Users.Command.CreateClient;
+using ClinicAPI.Infrastructure.NotificationService;
 using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
@@ -17,7 +18,8 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddMediatR(typeof(CreateClientCommandHandler).GetTypeInfo().Assembly);
 //builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddApplication();
-builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<INotificationService, NotificationService>();
+
 builder.Services.AddSingleton(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
 var app = builder.Build();
