@@ -13,7 +13,7 @@ namespace ClinicAPI.Application.Users.Command.CreateDoctor
 
         public async Task<Unit> Handle(CreateDoctorCommand request, CancellationToken cancellationToken)
         {
-
+            //აქ უნდა შევადარო აქტივაციის კოდი თუ სწორია, დამჭირდება GetTempCode
 
             var model = new CreateDoctorModel
             {
