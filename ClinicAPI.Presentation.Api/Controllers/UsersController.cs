@@ -6,6 +6,7 @@ using AutoMapper;
 using ClinicAPI.Application.Users.Command.CreateClient;
 using ClinicAPI.Application.Users.Command.CreateDoctor;
 using ClinicAPI.Application.Users.Command.SendTempCode;
+using ClinicAPI.Application.Users.Query.GetUserDetails;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,6 +40,14 @@ namespace ClinicAPi.Presentation.Api.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult> SendTempCode([FromBody] SendTempCodeCommand model)
+        {
+            var result = await _mediator.Send(model);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult> GetUserDetails([FromQuery] GetUserDetailsQuery model)
         {
             var result = await _mediator.Send(model);
             return Ok(result);

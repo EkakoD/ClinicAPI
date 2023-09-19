@@ -5,8 +5,8 @@ namespace ClinicAPI.Application.Users.Command.CreateDoctor
 {
     public class CreateDoctorCommandHandler : IRequestHandler<CreateDoctorCommand>
     {
-        private IBaseRepository<CreateDoctorModel> _repository;
-        public CreateDoctorCommandHandler(IBaseRepository<CreateDoctorModel> repository)
+        private IBaseRepository _repository;
+        public CreateDoctorCommandHandler(IBaseRepository repository)
         {
             _repository = repository;
         }
@@ -25,8 +25,9 @@ namespace ClinicAPI.Application.Users.Command.CreateDoctor
                 CategoryId = request.CategoryId,
                 RoleId = 2
             };
-            _repository.Create("Users", "[dbo].[CreateDoctor]", model);
+            await _repository.Create<CreateDoctorModel>("[dbo].[CreateDoctor]", model);
             return Unit.Value;
+
         }
     }
 }

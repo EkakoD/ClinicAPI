@@ -1,6 +1,5 @@
 using System.Reflection;
 using ClinicAPI.Application;
-using ClinicAPI.Application.Services;
 using ClinicAPI.Application.Users.Command.CreateClient;
 using ClinicAPI.Infrastructure.NotificationService;
 using ClinicAPI.Infrastructure.Repositories;
@@ -20,7 +19,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplication();
 builder.Services.AddTransient<INotificationService, NotificationService>();
 
-builder.Services.AddSingleton(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddSingleton(typeof(IBaseRepository), typeof(BaseRepository));
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ClinicAPI.Application.Users.Command.CreateClient
 {
-    public class CreateClientCommand : IRequest
+    public class CreateClientCommand : IRequest<string>
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }

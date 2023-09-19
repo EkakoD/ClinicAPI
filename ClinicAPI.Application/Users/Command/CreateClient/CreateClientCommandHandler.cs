@@ -1,33 +1,57 @@
 ﻿using System;
+using ClinicAPI.Application.Users.Query.GetUserDetails;
 using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
 
 namespace ClinicAPI.Application.Users.Command.CreateClient
 {
-    public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand>
+    public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand, string>
     {
-        private IBaseRepository<CreateClientModel> _repository;
-        public CreateClientCommandHandler(IBaseRepository<CreateClientModel> repository)
+        private IBaseRepository _repository;
+        public CreateClientCommandHandler(IBaseRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<Unit> Handle(CreateClientCommand request, CancellationToken cancellationToken)
+        public async Task<string> Handle(CreateClientCommand request, CancellationToken cancellationToken)
         {
-            //აქ უნდა შევადარო აქტივაციის კოდი თუ სწორია, დამჭირდება GetTempCode
-            var model = new CreateClientModel
-            {
-                Firstname = request.Firstname,
-                Lastname = request.Lastname,
-                Email = request.Email,
-                Password = request.Password,
-                PersonalNumber = request.PersonalNumber,
-                RoleId = 3
 
+            var tempCodeParam = new TempCodeModel
+            {
+                Email = request.Email,
+                Code = request.ActivateCode
             };
-            _repository.Create("Users", "[dbo].[CreateUser]", model);
-            return Unit.Value;
+
+            var tempCodeCreateDate = _repository.GetSingle<ResponseModel>("[dbo].[GetTempCode]", tempCodeParam);
+            if (tempCodeCreateDate != null)
+            {
+                if (tempCodeCreateDate.CreateDate.AddMinutes(30) >= DateTime.Now)
+                {
+                    var model = new CreateClientModel
+                    {
+                        Firstname = request.Firstname,
+                        Lastname = request.Lastname,
+                        Email = request.Email,
+                        Password = request.Password,
+                        PersonalNumber = request.PersonalNumber,
+                        RoleId = 3
+
+                    };
+                    await _repository.Create<CreateClientModel>("[dbo].[CreateUser]", model);
+                    return "მოქმედება წარმატებით შესრულდა";
+                }
+                else
+                {
+                    return "აქტივაციის კოდი ვადაგასულია";
+
+                }
+            }
+            else
+            {
+                return "აქტივაციის კოდი ან მეილი არასწორია";
+            }
+
         }
     }
-}
 
+}

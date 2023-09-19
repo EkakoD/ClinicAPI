@@ -1,9 +1,10 @@
 ﻿using System;
 namespace ClinicAPI.Infrastructure.Repositories
 {
-	public interface IBaseRepository<T> where T : class
+    public interface IBaseRepository
     {
-		public void Create(string tableName, string procedureName, dynamic model);
-	}
+        public Task Create<T>(string procedureName, dynamic model) where T : class;
+        public T GetSingle<T>(string procedureName, dynamic model) where T : new();
+    }
 }
 

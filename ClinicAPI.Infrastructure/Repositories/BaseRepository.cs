@@ -1,10 +1,11 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Reflection;
 using ClinicAPI.Infrastructure.Models;
 
 namespace ClinicAPI.Infrastructure.Repositories
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : class
+    public class BaseRepository : IBaseRepository
 
     {
         //private ConfigurationManager _config;
@@ -13,66 +14,90 @@ namespace ClinicAPI.Infrastructure.Repositories
         {
             //config = config;
         }
-        public void Create(string tableName, string procedureName, dynamic model)
+        public Task Create<T>(string procedureName, dynamic model) where T : class
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                connection.Open();
-
-                using (SqlCommand cmd = new SqlCommand(procedureName, connection))
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
 
-                    foreach (var property in model.GetType().GetProperties())
+                    using (SqlCommand cmd = new SqlCommand(procedureName, connection))
                     {
-                        SqlParameter param = new SqlParameter("@" + property.Name, property.GetValue(model, null));
-                        cmd.Parameters.Add(param);
-                    }
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
+                        foreach (var property in model.GetType().GetProperties())
                         {
-                            // Access the results here
-                            int column1Value = reader.GetInt32(0);
-                            string column2Value = reader.GetString(1);
+                            SqlParameter param = new SqlParameter("@" + property.Name, property.GetValue(model, null));
+                            cmd.Parameters.Add(param);
+                        }
 
-                            Console.WriteLine($"Column1: {column1Value}, Column2: {column2Value}");
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int column1Value = reader.GetInt32(0);
+                                string column2Value = reader.GetString(1);
+
+                            }
                         }
                     }
                 }
+                return Task.CompletedTask;
+
+            }
+            catch (Exception ex)
+            {
+                return Task.FromException(ex);
             }
         }
 
-        public async Task<TempCodeModel> GetTempCode(string email, string code)
+        public T GetSingle<T>(string procedureName, dynamic model) where T : new()
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                connection.Open();
-                using (var command = new SqlCommand("GetTempCode", connection))
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    // Add parameters
-                    command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@code", code);
-
-                    using (var reader = command.ExecuteReader())
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand(procedureName, connection))
                     {
-
-                        var tempCode = new TempCodeModel
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        foreach (var property in model.GetType().GetProperties())
                         {
-                            Code = Convert.ToString(reader["Code"]),
-                            CreateDate = Convert.ToDateTime(reader["CreateDate"]),
-                            Id = Convert.ToInt32(reader["Id"]),
-                            Email = Convert.ToString(reader["Email"]),
+                            SqlParameter param = new SqlParameter("@" + property.Name, property.GetValue(model, null));
+                            cmd.Parameters.Add(param);
+                        }
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                T result = new T();
+                                Type type = typeof(T);
 
-                        };
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    string fieldName = reader.GetName(i);
+                                    PropertyInfo propertyInfo = type.GetProperty(fieldName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
 
-                        return tempCode;
+                                    if (propertyInfo != null && !reader.IsDBNull(i))
+                                    {
+                                        propertyInfo.SetValue(result, reader[i]);
+                                    }
+                                }
+                                return result;
+                            }
+                            return default(T);
+
+                        }
                     }
                 }
+
             }
+            catch (Exception ex)
+            {
+                throw new Exception("დაფიქრსირდა გაუთვალისწინებელი შეცდომა");
+            }
+
         }
     }
 }

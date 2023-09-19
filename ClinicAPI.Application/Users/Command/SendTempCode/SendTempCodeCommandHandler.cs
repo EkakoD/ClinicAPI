@@ -7,9 +7,10 @@ namespace ClinicAPI.Application.Users.Command.SendTempCode
 {
     public class SendTempCodeCommandHandler : IRequestHandler<SendTempCodeCommand>
     {
-        private IBaseRepository<SendTempCodeModel> _repository;
+        private IBaseRepository _repository;
         private INotificationService _notification;
-        public SendTempCodeCommandHandler(IBaseRepository<SendTempCodeModel> repository, INotificationService notification)
+        public SendTempCodeCommandHandler(IBaseRepository repository,
+            INotificationService notification)
         {
             _repository = repository;
             _notification = notification;
@@ -29,7 +30,7 @@ namespace ClinicAPI.Application.Users.Command.SendTempCode
                 Code = codeString,
                 CreateDate = createDate
             };
-            _repository.Create("Users", "[dbo].[CreateTempCode]", model);
+            await _repository.Create<SendTempCodeModel>("[dbo].[CreateTempCode]", model);
 
             EmailModel emailModel = new EmailModel
             {
