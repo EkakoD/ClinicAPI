@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/ClinicAPi.Presentation.Api.csproj": {}
+    "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPi.Presentation.Api\\ClinicAPi.Presentation.Api.csproj": {}
   },
   "projects": {
-    "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Application/ClinicAPI.Application.csproj": {
+    "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Application\\ClinicAPI.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Application/ClinicAPI.Application.csproj",
+        "projectUniqueName": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Application\\ClinicAPI.Application.csproj",
         "projectName": "ClinicAPI.Application",
-        "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Application/ClinicAPI.Application.csproj",
-        "packagesPath": "/Users/mcbook/.nuget/packages/",
-        "outputPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Application/obj/",
+        "projectPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Application\\ClinicAPI.Application.csproj",
+        "packagesPath": "C:\\Users\\SOFTX-01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mcbook/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\SOFTX-01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj": {
-                "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj"
+              "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj"
               }
             }
           }
@@ -71,26 +73,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj": {
+    "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj",
         "projectName": "ClinicAPI.Infrastructure",
-        "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
-        "packagesPath": "/Users/mcbook/.nuget/packages/",
-        "outputPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\SOFTX-01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mcbook/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\SOFTX-01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -134,37 +138,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/ClinicAPi.Presentation.Api.csproj": {
+    "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPi.Presentation.Api\\ClinicAPi.Presentation.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/ClinicAPi.Presentation.Api.csproj",
+        "projectUniqueName": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPi.Presentation.Api\\ClinicAPi.Presentation.Api.csproj",
         "projectName": "ClinicAPi.Presentation.Api",
-        "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/ClinicAPi.Presentation.Api.csproj",
-        "packagesPath": "/Users/mcbook/.nuget/packages/",
-        "outputPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/obj/",
+        "projectPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPi.Presentation.Api\\ClinicAPi.Presentation.Api.csproj",
+        "packagesPath": "C:\\Users\\SOFTX-01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPi.Presentation.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mcbook/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\SOFTX-01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Application/ClinicAPI.Application.csproj": {
-                "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Application/ClinicAPI.Application.csproj"
+              "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Application\\ClinicAPI.Application.csproj": {
+                "projectPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Application\\ClinicAPI.Application.csproj"
               },
-              "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj": {
-                "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj"
+              "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\SOFTX-01\\source\\repos\\ClinicAPI\\ClinicAPI.Infrastructure\\ClinicAPI.Infrastructure.csproj"
               }
             }
           }
@@ -207,7 +213,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

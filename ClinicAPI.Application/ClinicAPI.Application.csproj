@@ -31,13 +31,10 @@
     <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Users\" />
-    <Folder Include="Users\Command\" />
     <Folder Include="Users\Query\" />
     <Folder Include="Users\Command\CreateDoctor\" />
     <Folder Include="Users\Command\CreateClient\" />
     <Folder Include="Mappings\" />
-    <Folder Include="Users\Command\SendTempCode\" />
     <Folder Include="Users\Query\GetDoctors\" />
     <Folder Include="Users\Query\GetUserDetails\" />
     <Folder Include="Category\" />

@@ -12,6 +12,8 @@ namespace ClinicAPI.Application.Users.Command.CreateDoctor
         public string ImageUrl { get; set; } // Todo: ფოტოზე მოსაფიქრებელია
         public string Pdf { get; set; } // Todo: pdf მოსაფიქრებელია
         public int CategoryId { get; set; }
+        public int RoleId { get; set; }
+
     }
 }
 

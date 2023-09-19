@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Reflection.Metadata;
-using System.Runtime.ConstrainedExecution;
-using System.Runtime.InteropServices;
-using Microsoft.Extensions.Configuration;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using ClinicAPI.Infrastructure.Models;
 
 namespace ClinicAPI.Infrastructure.Repositories
 {
@@ -47,6 +39,37 @@ namespace ClinicAPI.Infrastructure.Repositories
 
                             Console.WriteLine($"Column1: {column1Value}, Column2: {column2Value}");
                         }
+                    }
+                }
+            }
+        }
+
+        public async Task<TempCodeModel> GetTempCode(string email, string code)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand("GetTempCode", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Add parameters
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@code", code);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+
+                        var tempCode = new TempCodeModel
+                        {
+                            Code = Convert.ToString(reader["Code"]),
+                            CreateDate = Convert.ToDateTime(reader["CreateDate"]),
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Email = Convert.ToString(reader["Email"]),
+
+                        };
+
+                        return tempCode;
                     }
                 }
             }

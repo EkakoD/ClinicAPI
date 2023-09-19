@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ClinicAPI.Application.Users.Command.SendTempCode
 {
-    public class SendTempCodeCommand :MapFrom<SendTempCodeModel>,IRequest
+    public class SendTempCodeCommand : IRequest
     {
         public string Email { get; set; }
     }

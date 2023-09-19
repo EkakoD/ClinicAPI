@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ClinicAPI.Application.Users.Command.CreateDoctor
 {
-    public class CreateDoctorCommand : MapFrom<CreateDoctorModel>, IRequest<int>
+    public class CreateDoctorCommand : IRequest
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }

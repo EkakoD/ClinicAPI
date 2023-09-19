@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ClinicAPI.Application.Users.Command.CreateClient
 {
-    public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand, int>
+    public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand>
     {
         private IBaseRepository<CreateClientModel> _repository;
         public CreateClientCommandHandler(IBaseRepository<CreateClientModel> repository)
@@ -12,8 +12,9 @@ namespace ClinicAPI.Application.Users.Command.CreateClient
             _repository = repository;
         }
 
-        public Task<int> Handle(CreateClientCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateClientCommand request, CancellationToken cancellationToken)
         {
+            //აქ უნდა შევადარო აქტივაციის კოდი თუ სწორია, დამჭირდება GetTempCode
             var model = new CreateClientModel
             {
                 Firstname = request.Firstname,
@@ -25,7 +26,7 @@ namespace ClinicAPI.Application.Users.Command.CreateClient
 
             };
             _repository.Create("Users", "[dbo].[CreateUser]", model);
-            return null;
+            return Unit.Value;
         }
     }
 }
