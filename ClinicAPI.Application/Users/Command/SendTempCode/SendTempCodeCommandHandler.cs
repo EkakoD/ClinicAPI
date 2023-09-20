@@ -1,5 +1,5 @@
 ﻿using ClinicAPI.Infrastructure.Models;
-using ClinicAPI.Infrastructure.NotificationService;
+using ClinicAPI.Infrastructure.Services.NotificationService;
 using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
 using System;

@@ -1,9 +1,10 @@
-﻿using ClinicAPI.Infrastructure.Repositories;
+﻿using ClinicAPI.Application.Users.Command.CreateClient;
+using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
 using System;
 namespace ClinicAPI.Application.Users.Command.CreateDoctor
 {
-    public class CreateDoctorCommandHandler : IRequestHandler<CreateDoctorCommand>
+    public class CreateDoctorCommandHandler : IRequestHandler<CreateDoctorCommand, string>
     {
         private IBaseRepository _repository;
         public CreateDoctorCommandHandler(IBaseRepository repository)
@@ -11,22 +12,31 @@ namespace ClinicAPI.Application.Users.Command.CreateDoctor
             _repository = repository;
         }
 
-        public async Task<Unit> Handle(CreateDoctorCommand request, CancellationToken cancellationToken)
+        public async Task<string> Handle(CreateDoctorCommand request, CancellationToken cancellationToken)
         {
-            //აქ უნდა შევადარო აქტივაციის კოდი თუ სწორია, დამჭირდება GetTempCode
 
-            var model = new CreateDoctorModel
+            var users = _repository.GetAll<UserResponseModel>("[dbo].[GetUserByEmail]", request.Email);
+            if (users.Count() == 0)
             {
-                Firstname = request.Firstname,
-                Lastname = request.Lastname,
-                Email = request.Email,
-                Password = request.Password,
-                PersonalNumber = request.PersonalNumber,
-                CategoryId = request.CategoryId,
-                RoleId = 2
-            };
-            await _repository.Create<CreateDoctorModel>("[dbo].[CreateDoctor]", model);
-            return Unit.Value;
+
+                var model = new CreateDoctorModel
+                {
+                    Firstname = request.Firstname,
+                    Lastname = request.Lastname,
+                    Email = request.Email,
+                    Password = request.Password,
+                    PersonalNumber = request.PersonalNumber,
+                    CategoryId = request.CategoryId,
+                    RoleId = 2
+                };
+                await _repository.Create<CreateDoctorModel>("[dbo].[CreateDoctor]", model);
+                return "მოქმედება წარმატებით შესრულდა";
+
+            }
+            else
+            {
+                return "ამ ელ-ფოსტით არსებობს უკვე ანგარიში";
+            }
 
         }
     }

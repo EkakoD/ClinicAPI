@@ -81,3 +81,13 @@
 /Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/obj/Debug/net7.0/ClinicAPi.Presentation.Api.pdb
 /Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/obj/Debug/net7.0/ClinicAPi.Presentation.Api.genruntimeconfig.cache
 /Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/obj/Debug/net7.0/ref/ClinicAPi.Presentation.Api.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll

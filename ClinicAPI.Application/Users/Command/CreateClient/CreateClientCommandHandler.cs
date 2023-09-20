@@ -25,26 +25,31 @@ namespace ClinicAPI.Application.Users.Command.CreateClient
             var tempCodeCreateDate = _repository.GetSingle<ResponseModel>("[dbo].[GetTempCode]", tempCodeParam);
             if (tempCodeCreateDate != null)
             {
-                if (tempCodeCreateDate.CreateDate.AddMinutes(30) >= DateTime.Now)
+                var users = _repository.GetAll<UserResponseModel>("[dbo].[GetUserByEmail]", request.Email);
+                if (users.Count() == 0)
                 {
-                    var model = new CreateClientModel
+                    if (tempCodeCreateDate.CreateDate.AddMinutes(2) >= DateTime.Now)
                     {
-                        Firstname = request.Firstname,
-                        Lastname = request.Lastname,
-                        Email = request.Email,
-                        Password = request.Password,
-                        PersonalNumber = request.PersonalNumber,
-                        RoleId = 3
+                        var model = new CreateClientModel
+                        {
+                            Firstname = request.Firstname,
+                            Lastname = request.Lastname,
+                            Email = request.Email,
+                            Password = request.Password,
+                            PersonalNumber = request.PersonalNumber,
+                            RoleId = 3
 
-                    };
-                    await _repository.Create<CreateClientModel>("[dbo].[CreateUser]", model);
-                    return "მოქმედება წარმატებით შესრულდა";
-                }
-                else
-                {
-                    return "აქტივაციის კოდი ვადაგასულია";
+                        };
+                        await _repository.Create<CreateClientModel>("[dbo].[CreateUser]", model);
+                        return "მოქმედება წარმატებით შესრულდა";
+                    }
+                    else
+                    {
+                        return "აქტივაციის კოდი ვადაგასულია";
 
+                    }
                 }
+                return "ასეთი ელ-ფოსტით უკვე შექმნილია ანგარიში";
             }
             else
             {

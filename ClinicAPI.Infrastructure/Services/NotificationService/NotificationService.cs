@@ -2,7 +2,7 @@
 using System.Net.Mail;
 using ClinicAPI.Infrastructure.Models;
 
-namespace ClinicAPI.Infrastructure.NotificationService
+namespace ClinicAPI.Infrastructure.Services.NotificationService
 {
     public class NotificationService : INotificationService
     {

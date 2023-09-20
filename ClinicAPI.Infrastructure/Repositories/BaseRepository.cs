@@ -95,9 +95,59 @@ namespace ClinicAPI.Infrastructure.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception("დაფიქრსირდა გაუთვალისწინებელი შეცდომა");
+                throw new Exception("დაფიქრსირდა გაუთვალისწინებელი შეცდომა", ex);
             }
 
         }
+
+        public List<T> GetAll<T>(string procedureName, dynamic model) where T : new()
+        {
+            try
+            {
+                List<T> resultList = new List<T>();
+
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand(procedureName, connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        foreach (var property in model.GetType().GetProperties())
+                        {
+                            SqlParameter param = new SqlParameter("@" + property.Name, property.GetValue(model, null));
+                            cmd.Parameters.Add(param);
+                        }
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                T result = new T();
+                                Type type = typeof(T);
+
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    string fieldName = reader.GetName(i);
+                                    PropertyInfo propertyInfo = type.GetProperty(fieldName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+
+                                    if (propertyInfo != null && !reader.IsDBNull(i))
+                                    {
+                                        propertyInfo.SetValue(result, reader[i]);
+                                    }
+                                }
+
+                                resultList.Add(result);
+                            }
+                        }
+                    }
+                }
+
+                return resultList;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("დაფიქსირდა გაუთვალისწინებელი შეცდომა", ex);
+            }
+        }
+
     }
 }

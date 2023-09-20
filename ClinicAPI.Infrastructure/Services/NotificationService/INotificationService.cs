@@ -1,6 +1,6 @@
 ﻿using ClinicAPI.Infrastructure.Models;
 
-namespace ClinicAPI.Infrastructure.NotificationService
+namespace ClinicAPI.Infrastructure.Services.NotificationService
 {
     public interface INotificationService
     {

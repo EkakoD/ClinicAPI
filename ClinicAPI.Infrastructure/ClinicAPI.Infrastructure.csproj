@@ -10,12 +10,24 @@
     <None Remove="System.Data.SqlClient" />
     <None Remove="Repositories\" />
     <None Remove="Microsoft.Extensions.Configuration" />
+    <None Remove="Services\" />
+    <None Remove="Services\NotificationService\" />
+    <None Remove="Services\JwtPasswordService\" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
+    <None Remove="Microsoft.AspNetCore.Cryptography.KeyDerivation" />
+    <None Remove="Microsoft.AspNetCore.Http.Abstractions" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="7.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\NotificationService\" />
+    <Folder Include="Services\JwtPasswordService\" />
   </ItemGroup>
 </Project>
