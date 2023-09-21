@@ -30,6 +30,8 @@
     <None Remove="Appointments\Query\GetAppointmentTimes\" />
     <None Remove="Users\Command\ResetPassword\" />
     <None Remove="Users\Query\LogInUser\" />
+    <None Remove="Services\" />
+    <None Remove="Base\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Users\Query\" />
@@ -49,6 +51,8 @@
     <Folder Include="Appointments\Query\GetAppointmentTimes\" />
     <Folder Include="Users\Command\ResetPassword\" />
     <Folder Include="Users\Query\LogInUser\" />
+    <Folder Include="Services\" />
+    <Folder Include="Base\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />

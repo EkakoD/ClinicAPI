@@ -1,50 +1,54 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Text;
+using ClinicAPI.Application.Base;
 using ClinicAPI.Application.Users.Command.CreateClient;
 using ClinicAPI.Infrastructure.Repositories;
+using ClinicAPI.Infrastructure.Services.JwtPasswordService;
+using ClinicAPI.Infrastructure.Services.NotificationService;
 using MediatR;
 
 namespace ClinicAPI.Application.Users.Command.ResetPassword
 {
-    public class ResetPasswordCommandHandler : IRequestHandler<ResetPasswordCommand, string>
+    public class ResetPasswordCommandHandler : IRequestHandler<ResetPasswordCommand, IResponse<string>>
     {
         private IBaseRepository _repository;
+        private INotificationService _notificationService;
+        private IJwtPasswordService _jwtPasswordService;
         private static readonly Random random = new Random();
-        private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        public ResetPasswordCommandHandler(IBaseRepository repository)
+        public ResetPasswordCommandHandler(IBaseRepository repository, INotificationService notification, IJwtPasswordService jwtPasswordService)
         {
             _repository = repository;
+            _notificationService = notification;
+            _jwtPasswordService = jwtPasswordService;
         }
 
-        public async Task<string> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
+        public async Task<IResponse<string>> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
         {
-
-            var user = _repository.GetSingle<UserResponseModel>("[dbo].[GetUserByEmail]", request.Email);
+            var response = new Response<string>();
+            var user = _repository.GetSingle<UserResponseModel>("[dbo].[GetUserByEmail]", new ClientEmail { Email=request.Email});
             if (user != null)
             {
-                var randomStringLength = 6;
-                var randomString = new StringBuilder(randomStringLength);
-                for (int i = 0; i < randomStringLength; i++)
-                {
-                    randomString.Append(chars[random.Next(chars.Length)]);
-                }
-                var newPass = randomString.ToString();
+                var newPass = Guid.NewGuid().ToString("d").Substring(1, 8);
 
                 var resetPasswordModel = new ResetPasswordModel
                 {
-                    Email = request.Email,
-                    NewPassword = newPass
+                    Id = user.Id,
+                    NewPassword = _jwtPasswordService.HashPassword(newPass)
                 };
-                await _repository.Create<ResetPasswordModel>("[dbo].[ChangePassword]", resetPasswordModel);
-                return "მოქმედება წარმატებით შესრულდა";
-
+                await _repository.CreateOrUpdate<ResetPasswordModel>("[dbo].[ChangePassword]", resetPasswordModel);
+                await _notificationService.SendEmailAsync(new Infrastructure.Models.EmailModel
+                {
+                    Email = user.Email,
+                    Text = "ახალი პაროლი:"+ newPass
+                });
+                response.SuccessData("მოქმედება წარმატებით შესრულდა");
             }
             else
             {
-                return "ამ ელ-ფოსტით მომხმარებელი არ მოიძებნა";
+                response.SuccessData("ამ ელ-ფოსტით მომხმარებელი არ მოიძებნა");
             }
-
+            return response;
         }
     }
 }

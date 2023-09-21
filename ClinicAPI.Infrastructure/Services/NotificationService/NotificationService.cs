@@ -14,7 +14,7 @@ namespace ClinicAPI.Infrastructure.Services.NotificationService
                 using (MailMessage mail = new MailMessage())
                 {
 
-                    body = string.Concat("TempCode:", request.Code);
+                    body = string.Concat(request.Text);
                     mail.From = new MailAddress("ekadaghelashvili@gmail.com");
                     mail.To.Add(request.Email);
                     mail.Subject = "Clinic Verification";

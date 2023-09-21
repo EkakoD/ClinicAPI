@@ -14,7 +14,7 @@ namespace ClinicAPI.Infrastructure.Repositories
         {
             //config = config;
         }
-        public Task Create<T>(string procedureName, dynamic model) where T : class
+        public Task CreateOrUpdate<T>(string procedureName, dynamic model) where T : class
         {
             try
             {
@@ -148,6 +148,5 @@ namespace ClinicAPI.Infrastructure.Repositories
                 throw new Exception("დაფიქსირდა გაუთვალისწინებელი შეცდომა", ex);
             }
         }
-
     }
 }

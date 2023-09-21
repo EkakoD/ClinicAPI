@@ -30,12 +30,12 @@ namespace ClinicAPI.Application.Users.Command.SendTempCode
                 Code = codeString,
                 CreateDate = createDate
             };
-            await _repository.Create<SendTempCodeModel>("[dbo].[CreateTempCode]", model);
+            await _repository.CreateOrUpdate<SendTempCodeModel>("[dbo].[CreateTempCode]", model);
 
             EmailModel emailModel = new EmailModel
             {
                 Email = request.Email,
-                Code = codeString,
+                Text ="ვერიფიკაციის კოდი:" + codeString,
             };
 
             await _notification.SendEmailAsync(emailModel);

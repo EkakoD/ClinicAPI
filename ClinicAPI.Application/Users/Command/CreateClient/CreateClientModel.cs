@@ -10,5 +10,9 @@ namespace ClinicAPI.Application.Users.Command.CreateClient
         public string Password { get; set; }
         public int? RoleId { get; set; }
     }
+   public class ClientEmail
+    {
+        public string Email { get; set; }
+    }
 }
 

@@ -29,7 +29,7 @@ namespace ClinicAPI.Application.Users.Command.CreateDoctor
                     CategoryId = request.CategoryId,
                     RoleId = 2
                 };
-                await _repository.Create<CreateDoctorModel>("[dbo].[CreateDoctor]", model);
+                await _repository.CreateOrUpdate<CreateDoctorModel>("[dbo].[CreateDoctor]", model);
                 return "მოქმედება წარმატებით შესრულდა";
 
             }

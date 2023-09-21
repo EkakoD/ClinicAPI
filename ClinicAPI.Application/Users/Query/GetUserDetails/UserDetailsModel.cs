@@ -8,6 +8,7 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
         public string Lastname { get; set; }
         public string PersonalNumber { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public int RoleId { get; set; }

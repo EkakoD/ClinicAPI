@@ -19,6 +19,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
         }
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
+
         public async Task<ActionResult> GetUserDetails([FromQuery] GetCategoriesQuery model)
         {
             var result = await _mediator.Send(model);

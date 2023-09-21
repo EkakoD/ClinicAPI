@@ -1,20 +1,25 @@
 ﻿using System;
+using ClinicAPI.Infrastructure.Services.JwtPasswordService;
 using ClinicAPI.Application.Users.Query.GetUserDetails;
 using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
+using ClinicAPI.Application.Base;
 
 namespace ClinicAPI.Application.Users.Command.CreateClient
 {
-    public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand, string>
+    public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand, IResponse<string>>
     {
         private IBaseRepository _repository;
-        public CreateClientCommandHandler(IBaseRepository repository)
+        private IJwtPasswordService _jwtPasswordService;
+        public CreateClientCommandHandler(IBaseRepository repository, IJwtPasswordService jwtPasswordService)
         {
             _repository = repository;
+            _jwtPasswordService = jwtPasswordService;
         }
 
-        public async Task<string> Handle(CreateClientCommand request, CancellationToken cancellationToken)
+        public async Task<IResponse<string>> Handle(CreateClientCommand request, CancellationToken cancellationToken)
         {
+            var response = new Response<string>();
 
             var tempCodeParam = new TempCodeModel
             {
@@ -25,37 +30,40 @@ namespace ClinicAPI.Application.Users.Command.CreateClient
             var tempCodeCreateDate = _repository.GetSingle<ResponseModel>("[dbo].[GetTempCode]", tempCodeParam);
             if (tempCodeCreateDate != null)
             {
-                var users = _repository.GetAll<UserResponseModel>("[dbo].[GetUserByEmail]", request.Email);
+                var users = _repository.GetAll<UserResponseModel>("[dbo].[GetUserByEmail]", new ClientEmail {  Email= request.Email});
                 if (users.Count() == 0)
                 {
-                    if (tempCodeCreateDate.CreateDate.AddMinutes(2) >= DateTime.Now)
+                    if (tempCodeCreateDate.CreateDate.AddMinutes(10) >= DateTime.Now)
                     {
                         var model = new CreateClientModel
                         {
                             Firstname = request.Firstname,
                             Lastname = request.Lastname,
                             Email = request.Email,
-                            Password = request.Password,
+                            Password = _jwtPasswordService.HashPassword(request.Password),
                             PersonalNumber = request.PersonalNumber,
                             RoleId = 3
 
                         };
-                        await _repository.Create<CreateClientModel>("[dbo].[CreateUser]", model);
-                        return "მოქმედება წარმატებით შესრულდა";
+                        await _repository.CreateOrUpdate<CreateClientModel>("[dbo].[CreateUser]", model);
+                        response.SuccessData("მოქმედება წარმატებით შესრულდა");
                     }
                     else
                     {
-                        return "აქტივაციის კოდი ვადაგასულია";
+                        response.HasBadRequest("აქტივაციის კოდი ვადაგასულია");
 
                     }
                 }
-                return "ასეთი ელ-ფოსტით უკვე შექმნილია ანგარიში";
+                else
+                {
+                    response.HasBadRequest("ასეთი ელ-ფოსტით უკვე შექმნილია ანგარიში");
+                }
             }
             else
             {
-                return "აქტივაციის კოდი ან მეილი არასწორია";
+                response.HasBadRequest("აქტივაციის კოდი ან მეილი არასწორია");
             }
-
+            return response;
         }
     }
 
