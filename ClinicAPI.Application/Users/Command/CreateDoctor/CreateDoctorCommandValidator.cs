@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace ClinicAPI.Application.Users.Command.CreateDoctor
 {
-    public class CreateDoctorModelValidator : AbstractValidator<CreateDoctorModel>
+    public class CreateDoctorCommandValidator : AbstractValidator<CreateDoctorCommand>
     {
-        public CreateDoctorModelValidator()
+        public CreateDoctorCommandValidator()
         {
             RuleFor(s => s.Firstname).NotEmpty().WithName("სახელი არ უნდა იყოს ცარიელი")
                 .MinimumLength(5).WithMessage("მინიმუმ 5 სიმბოლო");

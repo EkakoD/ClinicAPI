@@ -1,10 +1,11 @@
 ﻿using System;
+using ClinicAPI.Application.Base;
 using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
 
 namespace ClinicAPI.Application.Users.Query.GetDoctors
 {
-	public class GetDoctorsQueryHandler : IRequestHandler<GetDoctorsQuery, List<DoctorsModel>>
+    public class GetDoctorsQueryHandler : IRequestHandler<GetDoctorsQuery, IResponse<List<DoctorsModel>>>
     {
         private IBaseRepository _repository;
         public GetDoctorsQueryHandler(IBaseRepository repository)
@@ -12,10 +13,15 @@ namespace ClinicAPI.Application.Users.Query.GetDoctors
             _repository = repository;
         }
 
-        public async Task<List<DoctorsModel>> Handle(GetDoctorsQuery request, CancellationToken cancellationToken)
+        public async Task<IResponse<List<DoctorsModel>>> Handle(GetDoctorsQuery request, CancellationToken cancellationToken)
         {
+            var response = new Response<List<DoctorsModel>>();
+
             List<DoctorsModel> doctors = _repository.GetAll<DoctorsModel>("[dbo].[GetDoctors]", request);
-            return doctors;
+            response.Data = doctors;
+            response.SuccessData();
+
+            return response;
         }
     }
 }

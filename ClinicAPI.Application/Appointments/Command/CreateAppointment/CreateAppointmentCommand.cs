@@ -1,10 +1,11 @@
 ﻿using System;
+using ClinicAPI.Application.Base;
 using ClinicAPI.Application.Mappings;
 using MediatR;
 
 namespace ClinicAPI.Application.Appointments.Command.CreateAppointment
 {
-	public class CreateAppointmentCommand :MapFrom<CreateAppointmentModel>, IRequest<int>
+	public class CreateAppointmentCommand :MapFrom<CreateAppointmentModel>, IRequest<IResponse<string>>
 	{
         public int DoctorId { get; set; }
         public int ClientId { get; set; }

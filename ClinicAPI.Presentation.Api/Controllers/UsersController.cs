@@ -6,6 +6,7 @@ using AutoMapper;
 using ClinicAPI.Application.Base;
 using ClinicAPI.Application.Users.Command.CreateClient;
 using ClinicAPI.Application.Users.Command.CreateDoctor;
+using ClinicAPI.Application.Users.Command.DeleteDoctor;
 using ClinicAPI.Application.Users.Command.ResetPassword;
 using ClinicAPI.Application.Users.Command.SendTempCode;
 using ClinicAPI.Application.Users.Query.GetUserDetails;
@@ -34,29 +35,37 @@ namespace ClinicAPi.Presentation.Api.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult> CreateDoctor([FromBody] CreateDoctorCommand model)
+        public async Task<IActionResult> CreateDoctor([FromBody] CreateDoctorCommand model)
         {
             var result = await _mediator.Send(model);
-            return Ok(result);
+            return Execute(result);
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> DeleteAppointment([FromBody] DeleteDoctorCommand model)
+        {
+            var result = await _mediator.Send(model);
+            return Execute(result);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult> SendTempCode([FromBody] SendTempCodeCommand model)
+        public async Task<IActionResult> SendTempCode([FromBody] SendTempCodeCommand model)
         {
             var result = await _mediator.Send(model);
-            return Ok(result);
+            return Execute(result);
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult> GetUserDetails([FromQuery] GetUserDetailsQuery model)
+        public async Task<IActionResult> GetUserDetails([FromQuery] GetUserDetailsQuery model)
         {
             var result = await _mediator.Send(model);
-            return Ok(result);
+            return Execute(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Login([FromBody] LoginUserForm  model)
+        public async Task<IActionResult> Login([FromBody] LoginUserForm model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);

@@ -1,10 +1,11 @@
 ﻿using System;
+using ClinicAPI.Application.Base;
 using ClinicAPI.Application.Mappings;
 using MediatR;
 
 namespace ClinicAPI.Application.Users.Command.CreateDoctor
 {
-    public class CreateDoctorCommand : IRequest<string>
+    public class CreateDoctorCommand : IRequest<IResponse<string>>
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }

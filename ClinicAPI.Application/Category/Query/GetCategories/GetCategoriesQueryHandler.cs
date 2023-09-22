@@ -1,10 +1,11 @@
 ﻿using System;
+using ClinicAPI.Application.Base;
 using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
 
 namespace ClinicAPI.Application.Category.Query.GetCategories
 {
-    public class GetCategoriesQueryHandler : IRequestHandler<GetCategoriesQuery, List<CategoriesModel>>
+    public class GetCategoriesQueryHandler : IRequestHandler<GetCategoriesQuery, IResponse<List<CategoriesModel>>>
     {
         private IBaseRepository _repository;
         public GetCategoriesQueryHandler(IBaseRepository repository)
@@ -12,10 +13,13 @@ namespace ClinicAPI.Application.Category.Query.GetCategories
             _repository = repository;
         }
 
-        public async Task<List<CategoriesModel>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
+        public async Task<IResponse<List<CategoriesModel>>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
         {
+            var response = new Response<List<CategoriesModel>>();
             List<CategoriesModel> categories = _repository.GetAll<CategoriesModel>("[dbo].[GetCategories]", request);
-            return categories;
+            response.Data = categories;
+            response.SuccessData();
+            return response;
         }
     }
 }

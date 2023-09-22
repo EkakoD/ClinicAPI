@@ -1,10 +1,11 @@
 ﻿using System;
+using ClinicAPI.Application.Base;
 using ClinicAPI.Infrastructure.Repositories;
 using MediatR;
 
 namespace ClinicAPI.Application.Users.Query.GetUserDetails
 {
-    public class GetUserDetailsQueryHandler : IRequestHandler<GetUserDetailsQuery, UserDetailsModel>
+    public class GetUserDetailsQueryHandler : IRequestHandler<GetUserDetailsQuery, IResponse<UserDetailsModel>>
     {
         private IBaseRepository _repository;
         public GetUserDetailsQueryHandler(IBaseRepository repository)
@@ -12,10 +13,13 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
             _repository = repository;
         }
 
-        public async Task<UserDetailsModel> Handle(GetUserDetailsQuery request, CancellationToken cancellationToken)
+        public async Task<IResponse<UserDetailsModel>> Handle(GetUserDetailsQuery request, CancellationToken cancellationToken)
         {
+            var response = new Response<UserDetailsModel>();
             UserDetailsModel details = _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserById]", request);
-            return details;
+            response.Data = details;
+            response.SuccessData();
+            return response;
         }
     }
 }

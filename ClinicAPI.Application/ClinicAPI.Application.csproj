@@ -32,6 +32,7 @@
     <None Remove="Users\Query\LogInUser\" />
     <None Remove="Services\" />
     <None Remove="Base\" />
+    <None Remove="Users\Command\DeleteDoctor\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Users\Query\" />
@@ -53,6 +54,7 @@
     <Folder Include="Users\Query\LogInUser\" />
     <Folder Include="Services\" />
     <Folder Include="Base\" />
+    <Folder Include="Users\Command\DeleteDoctor\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
