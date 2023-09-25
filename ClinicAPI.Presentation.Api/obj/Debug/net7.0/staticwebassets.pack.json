@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/cv/dd.png",
+      "PackagePath": "staticwebassets/17/cv/dd.png"
+    },
+    {
+      "Id": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/images/dd.png",
+      "PackagePath": "staticwebassets/17/images/dd.png"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.ClinicAPi.Presentation.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.ClinicAPi.Presentation.Api.props",
+      "PackagePath": "build\\ClinicAPi.Presentation.Api.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.ClinicAPi.Presentation.Api.props",
+      "PackagePath": "buildMultiTargeting\\ClinicAPi.Presentation.Api.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.ClinicAPi.Presentation.Api.props",
+      "PackagePath": "buildTransitive\\ClinicAPi.Presentation.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

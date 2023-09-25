@@ -31,6 +31,17 @@ builder.Services.AddTransient<INotificationService, NotificationService>();
 builder.Services.AddTransient<IJwtPasswordService, JwtPasswordService>();
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton(typeof(IBaseRepository), typeof(BaseRepository));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ClinicOrigins", builder =>
+    {
+        builder.AllowAnyHeader()
+           .AllowAnyMethod()
+           .WithOrigins("http://localhost:4200");
+
+        //.WithExposedHeaders("fileName");
+    });
+});
 builder.Services.AddSwaggerGen(setup =>
 {
     // Include 'SecurityScheme' to use JWT Authentication
@@ -87,7 +98,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("AllowSpecificOrigin");
 
+
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

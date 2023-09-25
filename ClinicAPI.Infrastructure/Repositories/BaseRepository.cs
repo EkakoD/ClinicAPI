@@ -14,10 +14,11 @@ namespace ClinicAPI.Infrastructure.Repositories
         {
             //config = config;
         }
-        public Task CreateOrUpdate<T>(string procedureName, dynamic model) where T : class
+        public async Task<int> CreateOrUpdate<T>(string procedureName, dynamic model) where T : class
         {
             try
             {
+                int id = 0;
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
@@ -31,24 +32,20 @@ namespace ClinicAPI.Infrastructure.Repositories
                             SqlParameter param = new SqlParameter("@" + property.Name, property.GetValue(model, null));
                             cmd.Parameters.Add(param);
                         }
+                        SqlParameter outputParam = new SqlParameter("@InsertedId", SqlDbType.Int);
+                        outputParam.Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add(outputParam);
 
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int column1Value = reader.GetInt32(0);
-                                string column2Value = reader.GetString(1);
-
-                            }
-                        }
+                        cmd.ExecuteNonQuery();
+                        id = (int)outputParam.Value;
                     }
                 }
-                return Task.CompletedTask;
+                return id;
 
             }
             catch (Exception ex)
             {
-                return Task.FromException(ex);
+                throw new Exception("დაფიქსირდა შეცდომა ბაზასთან კავშირის დროს!");
             }
         }
 

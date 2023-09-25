@@ -91,3 +91,4 @@
 /Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/bin/Debug/net7.0/ClinicAPi.Presentation.Api.staticwebassets.runtime.json

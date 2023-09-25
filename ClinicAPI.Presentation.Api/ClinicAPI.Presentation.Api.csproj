@@ -24,4 +24,10 @@
   <ItemGroup>
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
 </Project>

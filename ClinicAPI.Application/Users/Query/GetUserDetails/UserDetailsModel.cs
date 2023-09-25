@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ClinicAPI.Application.Users.Query.GetUserDetails
 {
-    public class UserDetailsModel // Todo: user-ის ბაზის მოდელიდან გადმომეპვა
+    public class UserDetailsModel
     {
         public int Id { get; set; }
         public string Firstname { get; set; }
@@ -13,6 +13,7 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
         public string CategoryName { get; set; }
         public int RoleId { get; set; }
         public string RoleName { get; set; }
+        public string ImageUrl { get; set; }
 
     }
 }

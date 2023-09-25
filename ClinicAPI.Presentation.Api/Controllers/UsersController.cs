@@ -9,15 +9,19 @@ using ClinicAPI.Application.Users.Command.CreateDoctor;
 using ClinicAPI.Application.Users.Command.DeleteDoctor;
 using ClinicAPI.Application.Users.Command.ResetPassword;
 using ClinicAPI.Application.Users.Command.SendTempCode;
+using ClinicAPI.Application.Users.Query.GetDoctors;
 using ClinicAPI.Application.Users.Query.GetUserDetails;
 using ClinicAPI.Application.Users.Query.LogInUser;
 using MediatR;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace ClinicAPi.Presentation.Api.Controllers
 {
+    [ApiController]
     [Route("api/[controller]/[action]")]
+    [EnableCors("ClinicOrigins")]
     public class UsersController : BaseController
     {
         private readonly IMediator _mediator;
@@ -72,6 +76,12 @@ namespace ClinicAPi.Presentation.Api.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordCommand model)
+        {
+            var result = await _mediator.Send(model);
+            return Execute(result);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetDoctors(GetDoctorsQuery model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);

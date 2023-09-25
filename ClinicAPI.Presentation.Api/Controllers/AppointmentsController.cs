@@ -6,12 +6,15 @@ using ClinicAPI.Application.Appointments.Command.CreateAppointment;
 using ClinicAPI.Application.Appointments.Command.DeleteAppointment;
 using ClinicAPI.Application.Appointments.Query.GetAppointmentTimes;
 using MediatR;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace ClinicAPi.Presentation.Api.Controllers
 {
+    [ApiController]
     [Route("api/[controller]/[action]")]
+    [EnableCors("ClinicOrigins")]
     public class AppointmentsController : BaseController
     {
         private readonly IMediator _mediator;

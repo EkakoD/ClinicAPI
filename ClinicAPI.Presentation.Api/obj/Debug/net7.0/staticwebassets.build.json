@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "XKvR5PeDJqwbz/qKfvjx71IdTX/IpcHCsL15Tm9N4TE=",
+  "Hash": "zwSAMnfvtwWGMCO9CUH9jKxrY/YIf3lou9Utc9elYVs=",
   "Source": "ClinicAPi.Presentation.Api",
   "BasePath": "_content/ClinicAPi.Presentation.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "ClinicAPi.Presentation.Api/wwwroot",
+      "Source": "ClinicAPi.Presentation.Api",
+      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "BasePath": "_content/ClinicAPi.Presentation.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/cv/dd.png",
+      "SourceId": "ClinicAPi.Presentation.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "BasePath": "_content/ClinicAPi.Presentation.Api",
+      "RelativePath": "17/cv/dd.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/17/cv/dd.png"
+    },
+    {
+      "Identity": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/images/dd.png",
+      "SourceId": "ClinicAPi.Presentation.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "BasePath": "_content/ClinicAPi.Presentation.Api",
+      "RelativePath": "17/images/dd.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/17/images/dd.png"
+    }
+  ]
 }

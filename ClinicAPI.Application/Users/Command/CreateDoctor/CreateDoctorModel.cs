@@ -13,5 +13,9 @@ namespace ClinicAPI.Application.Users.Command.CreateDoctor
         public int CategoryId { get; set; }
 
     }
+    public class DoctorEmail
+    {
+        public string Email { get; set; }
+    }
 }
 

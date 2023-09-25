@@ -4,12 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using ClinicAPI.Application.Category.Query.GetCategories;
 using MediatR;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace ClinicAPi.Presentation.Api.Controllers
 {
+    [ApiController]
     [Route("api/[controller]/[action]")]
+    [EnableCors("ClinicOrigins")]
     public class CategoriesController : BaseController
     {
         private readonly IMediator _mediator;
@@ -19,7 +22,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
         }
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetUserDetails([FromQuery] GetCategoriesQuery model)
+        public async Task<IActionResult> GetCategories([FromQuery] GetCategoriesQuery model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);
