@@ -12,7 +12,7 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
         private IBaseRepository _repository;
         private IJwtPasswordService _jwtPasswordService;
         private string _wwwroot => Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-        public GetUserDetailsQueryHandler(IBaseRepository repository,IJwtPasswordService jwtPasswordService)
+        public GetUserDetailsQueryHandler(IBaseRepository repository, IJwtPasswordService jwtPasswordService)
         {
             _repository = repository;
             _jwtPasswordService = jwtPasswordService;
@@ -21,7 +21,7 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
         public async Task<IResponse<UserDetailsModel>> Handle(GetUserDetailsQuery request, CancellationToken cancellationToken)
         {
             var response = new Response<UserDetailsModel>();
-            UserDetailsModel details = _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserById]", new GetUserDetailsQuery { Id = _jwtPasswordService.GetUserId() });
+            UserDetailsModel details = _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserById]", new GetUserDetailsQuery { Id = request.Id });
             var folderPath = Path.Combine(_wwwroot, +details.Id + "/images");
 
             if (Directory.Exists(folderPath))

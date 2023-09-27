@@ -69,19 +69,25 @@ namespace ClinicAPi.Presentation.Api.Controllers
             return Execute(result);
         }
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+
         public async Task<IActionResult> Login([FromBody] LoginUserForm model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);
         }
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordCommand model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);
         }
+
         [HttpGet]
-        public async Task<IActionResult> GetDoctors(GetDoctorsQuery model)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetDoctors([FromQuery]GetDoctorsQuery model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);

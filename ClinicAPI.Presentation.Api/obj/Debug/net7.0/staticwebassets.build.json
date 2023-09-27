@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zwSAMnfvtwWGMCO9CUH9jKxrY/YIf3lou9Utc9elYVs=",
+  "Hash": "+Y+DrFuWvAhxGoeZiMv1tj6jMJGlpLNiLN1GoX5X37Y=",
   "Source": "ClinicAPi.Presentation.Api",
   "BasePath": "_content/ClinicAPi.Presentation.Api",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/17/images/dd.png"
+    },
+    {
+      "Identity": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/20/cv/972778_c852_4.jpeg",
+      "SourceId": "ClinicAPi.Presentation.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "BasePath": "_content/ClinicAPi.Presentation.Api",
+      "RelativePath": "20/cv/972778_c852_4.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/20/cv/972778_c852_4.jpeg"
+    },
+    {
+      "Identity": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/20/images/9_sql-server-management-studio-mac.jpeg",
+      "SourceId": "ClinicAPi.Presentation.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "BasePath": "_content/ClinicAPi.Presentation.Api",
+      "RelativePath": "20/images/9_sql-server-management-studio-mac.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/20/images/9_sql-server-management-studio-mac.jpeg"
     }
   ]
 }

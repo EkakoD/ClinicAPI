@@ -5,5 +5,12 @@ namespace ClinicAPI.Application.Users.Query.LogInUser
     {
         public string Email { get; set; }
     }
+
+    public class ResponseModel
+    {
+        public string Token { get; set; }
+        public int Id { get; set; }
+        public string Role { get; set; }
+    }
 }
 

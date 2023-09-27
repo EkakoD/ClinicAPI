@@ -7,27 +7,27 @@ using MediatR;
 
 namespace ClinicAPI.Application.Users.Query.LogInUser
 {
-    public class LoginUserCommandHandler : IRequestHandler<LoginUserForm,IResponse<string>>
+    public class LoginUserCommandHandler : IRequestHandler<LoginUserForm, IResponse<ResponseModel>>
     {
         private IBaseRepository _repository;
         private IJwtPasswordService _jwtService;
-        public LoginUserCommandHandler(IBaseRepository repository, IJwtPasswordService jwtPasswordService )
+        public LoginUserCommandHandler(IBaseRepository repository, IJwtPasswordService jwtPasswordService)
         {
             _repository = repository;
             _jwtService = jwtPasswordService;
         }
 
-        public async  Task<IResponse<string>> Handle(LoginUserForm request, CancellationToken cancellationToken)
+        public async Task<IResponse<ResponseModel>> Handle(LoginUserForm request, CancellationToken cancellationToken)
         {
-            var response = new Response<string>();
-            UserDetailsModel userDetails = _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserByEmail]", new LogInUserModel { Email = request.Email});
+            var response = new Response<ResponseModel>();
+            UserDetailsModel userDetails = _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserByEmail]", new LogInUserModel { Email = request.Email });
             if (userDetails != null)
             {
                 var validatePassword = _jwtService.ValidatePassword(request.Password, userDetails.Password);
                 if (validatePassword)
                 {
                     var token = _jwtService.GenerateJwtToken(userDetails.Email, userDetails.Id);
-                    response.Data = token;
+                    response.Data = new ResponseModel { Id = userDetails.Id, Token = token, Role = userDetails.RoleName };
                     response.SuccessData();
                     return response;
                 }
