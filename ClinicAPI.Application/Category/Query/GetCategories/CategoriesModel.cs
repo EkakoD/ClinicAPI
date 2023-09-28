@@ -5,6 +5,7 @@ namespace ClinicAPI.Application.Category.Query.GetCategories
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public int UserCount { get; set; }
     }
 }
 

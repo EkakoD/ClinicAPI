@@ -49,7 +49,7 @@ namespace ClinicAPI.Infrastructure.Repositories
             }
         }
 
-        public T GetSingle<T>(string procedureName, dynamic model) where T : new()
+        public async Task<T> GetSingle<T>(string procedureName, dynamic model) where T : new()
         {
             try
             {

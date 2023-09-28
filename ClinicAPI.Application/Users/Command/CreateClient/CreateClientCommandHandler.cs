@@ -27,10 +27,10 @@ namespace ClinicAPI.Application.Users.Command.CreateClient
                 Code = request.ActivateCode
             };
 
-            var tempCodeCreateDate = _repository.GetSingle<ResponseModel>("[dbo].[GetTempCode]", tempCodeParam);
+            var tempCodeCreateDate = await _repository.GetSingle<ResponseModel>("[dbo].[GetTempCode]", tempCodeParam);
             if (tempCodeCreateDate != null)
             {
-                var users = _repository.GetAll<UserResponseModel>("[dbo].[GetUserByEmail]", new ClientEmail {  Email= request.Email});
+                var users = _repository.GetAll<UserResponseModel>("[dbo].[GetUserByEmail]", new ClientEmail { Email = request.Email });
                 if (users.Count() == 0)
                 {
                     if (tempCodeCreateDate.CreateDate.AddMinutes(10) >= DateTime.Now)

@@ -17,7 +17,7 @@ namespace ClinicAPI.Application.Users.Command.DeleteDoctor
         public async Task<IResponse<string>> Handle(DeleteDoctorCommand request, CancellationToken cancellationToken)
         {
             var response = new Response<string>();
-            var appointment = _repository.GetSingle<UserResponseModel>("[dbo].[GetUserById]", new DeleteDoctorModel { Id = request.Id });
+            var appointment = await _repository.GetSingle<UserResponseModel>("[dbo].[GetUserById]", new DeleteDoctorModel { Id = request.Id });
             if (appointment != null && appointment.IsDeleted == false)
             {
                 await _repository.CreateOrUpdate<DeleteDoctorModel>("[dbo].[DeleteDoctor]", new DeleteDoctorModel { Id = request.Id });

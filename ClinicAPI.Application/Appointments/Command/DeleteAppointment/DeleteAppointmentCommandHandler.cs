@@ -16,7 +16,7 @@ namespace ClinicAPI.Application.Appointments.Command.DeleteAppointment
         public async Task<IResponse<string>> Handle(DeleteAppointmentCommand request, CancellationToken cancellationToken)
         {
             var response = new Response<string>();
-            var appointment = _repository.GetSingle<AppointmentModel>("[dbo].[GetAppointmentById]", new DeleteAppointmentModel { Id = request.Id });
+            var appointment = await _repository.GetSingle<AppointmentModel>("[dbo].[GetAppointmentById]", new DeleteAppointmentModel { Id = request.Id });
             if (appointment != null && appointment.IsDeleted == false)
             {
                 await _repository.CreateOrUpdate<DeleteAppointmentModel>("[dbo].[DeleteAppointment]", new DeleteAppointmentModel { Id = request.Id });

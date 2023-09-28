@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ClinicAPI.Application.Appointments.Command.CreateAppointment;
 using ClinicAPI.Application.Appointments.Command.DeleteAppointment;
+using ClinicAPI.Application.Appointments.Query.GetAppointments;
 using ClinicAPI.Application.Appointments.Query.GetAppointmentTimes;
 using MediatR;
 using Microsoft.AspNetCore.Cors;
@@ -24,14 +25,14 @@ namespace ClinicAPi.Presentation.Api.Controllers
         }
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> CreateClient([FromBody] CreateAppointmentCommand model)
+        public async Task<IActionResult> CreateAppointment([FromBody] CreateAppointmentCommand model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);
         }
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> DeleteAppointment([FromBody] DeleteAppointmentCommand model)
+        public async Task<IActionResult> DeleteAppointment([FromQuery] DeleteAppointmentCommand model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);
@@ -40,7 +41,15 @@ namespace ClinicAPi.Presentation.Api.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetUserDetails([FromQuery] GetAppointmentTimesQuery model)
+        public async Task<IActionResult> GetAppointmentTimes([FromQuery] GetAppointmentTimesQuery model)
+        {
+            var result = await _mediator.Send(model);
+            return Execute(result);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetAppointments([FromQuery] GetAppointmentQuery model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);

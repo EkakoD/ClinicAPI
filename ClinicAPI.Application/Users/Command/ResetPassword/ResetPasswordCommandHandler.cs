@@ -26,7 +26,7 @@ namespace ClinicAPI.Application.Users.Command.ResetPassword
         public async Task<IResponse<string>> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
         {
             var response = new Response<string>();
-            var user = _repository.GetSingle<UserResponseModel>("[dbo].[GetUserByEmail]", new ClientEmail { Email=request.Email});
+            var user = await _repository.GetSingle<UserResponseModel>("[dbo].[GetUserByEmail]", new ClientEmail { Email=request.Email});
             if (user != null)
             {
                 var newPass = Guid.NewGuid().ToString("d").Substring(1, 8);

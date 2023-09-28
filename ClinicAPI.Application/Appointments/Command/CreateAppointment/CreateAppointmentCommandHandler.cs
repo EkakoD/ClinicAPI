@@ -25,7 +25,7 @@ namespace ClinicAPI.Application.Appointments.Command.CreateAppointment
             var createDate = DateTime.Now;
             var model = new CreateAppointmentModel
             {
-                ClientId = request.ClientId,
+                PatientId = request.ClientId,
                 DoctorId = request.DoctorId,
                 Comment = request.Comment,
                 TimeId = request.TimeId,

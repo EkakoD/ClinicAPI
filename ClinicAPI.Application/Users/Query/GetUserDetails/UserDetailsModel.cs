@@ -14,6 +14,8 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
         public int RoleId { get; set; }
         public string RoleName { get; set; }
         public string ImageUrl { get; set; }
+        public int? Review { get; set; }
+        public int AppointmentCount { get; set; }
     }
 }
 

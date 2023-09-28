@@ -21,7 +21,7 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
         public async Task<IResponse<UserDetailsModel>> Handle(GetUserDetailsQuery request, CancellationToken cancellationToken)
         {
             var response = new Response<UserDetailsModel>();
-            UserDetailsModel details = _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserById]", new GetUserDetailsQuery { Id = request.Id });
+            UserDetailsModel details = await _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserById]", new GetUserDetailsQuery { Id = request.Id });
             var folderPath = Path.Combine(_wwwroot, +details.Id + "/images");
 
             if (Directory.Exists(folderPath))
