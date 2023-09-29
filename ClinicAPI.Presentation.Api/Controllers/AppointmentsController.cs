@@ -7,6 +7,7 @@ using ClinicAPI.Application.Appointments.Command.DeleteAppointment;
 using ClinicAPI.Application.Appointments.Query.GetAppointments;
 using ClinicAPI.Application.Appointments.Query.GetAppointmentTimes;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
             _mediator = mediator;
         }
         [HttpPost]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> CreateAppointment([FromBody] CreateAppointmentCommand model)
         {
@@ -31,6 +33,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
             return Execute(result);
         }
         [HttpDelete]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> DeleteAppointment([FromQuery] DeleteAppointmentCommand model)
         {

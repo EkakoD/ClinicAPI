@@ -47,7 +47,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
 
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> DeleteAppointment([FromBody] DeleteDoctorCommand model)
+        public async Task<IActionResult> DeleteDoctor([FromBody] DeleteDoctorCommand model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);
@@ -68,17 +68,17 @@ namespace ClinicAPi.Presentation.Api.Controllers
             var result = await _mediator.Send(model);
             return Execute(result);
         }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-
         public async Task<IActionResult> Login([FromBody] LoginUserForm model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);
         }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordCommand model)
         {
             var result = await _mediator.Send(model);
