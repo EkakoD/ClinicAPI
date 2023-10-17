@@ -1,87 +1,34 @@
 ﻿<Properties StartupConfiguration="{58F068EB-F236-4803-90A4-CF658A26426D}|https">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ClinicAPI.Application/Users/Query/GetDoctors/GetDoctorsQueryHandler.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ClinicAPI.Infrastructure/Repositories/BaseRepository.cs">
     <Files>
-      <File FileName="ClinicAPI.Infrastructure/Repositories/BaseRepository.cs" Line="53" Column="1" IsPinned="True" />
-      <File FileName="ClinicAPI.Infrastructure/Repositories/IBaseRepository.cs" Line="8" Column="27" IsPinned="True" />
-      <File FileName="ClinicAPI.Application/Category/Query/GetCategories/GetCategoriesQueryHandler.cs" />
-      <File FileName="ClinicAPI.Application/Category/Query/GetCategories/GetCategoriesQuery.cs" />
-      <File FileName="ClinicAPI.Application/Appointments/Command/CreateAppointment/CreateAppointmentModel.cs" />
-      <File FileName="ClinicAPi.Presentation.Api/Controllers/CategoriesController.cs" Line="26" Column="10" />
-      <File FileName="ClinicAPi.Presentation.Api/Controllers/UsersController.cs" Line="83" Column="1" />
-      <File FileName="ClinicAPi.Presentation.Api/Controllers/BaseController.cs" />
-      <File FileName="ClinicAPi.Presentation.Api/Controllers/AppointmentsController.cs" />
-      <File FileName="ClinicAPI.Application/Appointments/Query/GetAppointmentTimes/AppointmentTimesModel.cs" />
-      <File FileName="ClinicAPI.Application/Appointments/Query/GetAppointmentTimes/GetAppointmentTimesHandler.cs" />
-      <File FileName="ClinicAPI.Application/Appointments/Query/GetAppointmentTimes/GetAppointmentTimesQuery.cs" />
-      <File FileName="ClinicAPI.Application/Appointments/Command/CreateAppointment/CreateAppointmentCommand.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/CreateClient/CreateClientCommand.cs" Line="1" Column="1" />
-      <File FileName="ClinicAPI.Application/Appointments/Command/CreateAppointment/CreateAppointmentCommandHandler.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/CreateClient/CreateClientCommandHandler.cs" Line="43" Column="39" />
-      <File FileName="ClinicAPI.Application/Users/Command/SendTempCode/SendTempCodeCommandHandler.cs" />
-      <File FileName="ClinicAPI.Application/Appointments/Command/DeleteAppointment/DeleteAppointmentCommandHandler.cs" Line="34" Column="1" />
-      <File FileName="ClinicAPI.Application/Appointments/Command/DeleteAppointment/DeleteAppointmentCommand.cs" />
-      <File FileName="ClinicAPI.Application/Appointments/Command/DeleteAppointment/DeleteAppointmentModel.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/ResetPassword/ResetPasswordCommandHandler.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/DeleteDoctor/DeleteDoctorModel.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/DeleteDoctor/DeleteDoctorCommand.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/DeleteDoctor/DeleteDoctorCommandHandler.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/DeleteDoctor/DeleteDoctorCommandValidator.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/CreateDoctor/CreateDoctorModel.cs" Line="18" Column="40" />
-      <File FileName="ClinicAPI.Application/Users/Command/SendTempCode/SendTempCodeCommand.cs" />
-      <File FileName="ClinicAPI.Application/Users/Command/CreateDoctor/CreateDoctorCommandHandler.cs" Line="22" Column="10" />
-      <File FileName="ClinicAPI.Application/Users/Command/CreateDoctor/CreateDoctorCommand.cs" Line="15" Column="22" />
-      <File FileName="ClinicAPI.Application/Base/FileModel.cs" Line="4" Column="15" />
-      <File FileName="ClinicAPI.Application/Users/Command/CreateClient/CreateClientModel.cs" Line="1" Column="1" />
-      <File FileName="ClinicAPI.Presentation.Api/Program.cs" Line="92" Column="1" />
-      <File FileName="ClinicAPI.Infrastructure/FileService.cs" Line="14" Column="1" />
-      <File FileName="ClinicAPI.Application/Users/Query/GetDoctors/DoctorsModel.cs" Line="13" Column="2" />
-      <File FileName="ClinicAPI.Application/Users/Query/GetDoctors/GetDoctorsQuery.cs" Line="7" Column="33" />
-      <File FileName="ClinicAPI.Application/Users/Query/GetDoctors/GetDoctorsQueryHandler.cs" Line="22" Column="1" />
-      <File FileName="ClinicAPI.Application/Users/Query/GetUserDetails/GetUserDetailsQuery.cs" Line="9" Column="1" />
-      <File FileName="ClinicAPI.Application/Users/Query/GetUserDetails/GetUserDetailsQueryHandler.cs" Line="28" Column="14" />
-      <File FileName="ClinicAPI.Application/Users/Query/GetUserDetails/UserDetailsModel.cs" Line="4" Column="18" />
-      <File FileName="ClinicAPI.Application/Users/Command/CreateClient/CreateClientCommandValidator.cs" Line="1" Column="1" />
-      <File FileName="ClinicAPI.Infrastructure/Services/JwtPasswordService/IJwtPasswordService.cs" Line="9" Column="19" />
-      <File FileName="ClinicAPI.Infrastructure/Services/JwtPasswordService/JwtPasswordService.cs" Line="54" Column="1" />
+      <File FileName="ClinicAPI.Infrastructure/Repositories/BaseRepository.cs" Line="22" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ClinicAPI" expanded="True">
-            <Node name="ClinicAPI.Application" expanded="True">
-              <Node name="Base" expanded="True" />
-              <Node name="Users" expanded="True">
-                <Node name="Command" expanded="True">
-                  <Node name="CreateClient" expanded="True" />
-                </Node>
-                <Node name="Query" expanded="True">
-                  <Node name="GetDoctors" expanded="True">
-                    <Node name="GetDoctorsQueryHandler.cs" selected="True" />
-                  </Node>
-                  <Node name="GetUserDetails" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
+            <Node name="ClinicAPI.Application" expanded="True" />
             <Node name="ClinicAPI.Infrastructure" expanded="True">
               <Node name="Repositories" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="JwtPasswordService" expanded="True" />
-              </Node>
             </Node>
             <Node name="ClinicAPi.Presentation.Api" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="wwwroot" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="17" expanded="True" />
+              </Node>
+              <Node name="appsettings.json">
+                <Node name="appsettings.Development.json" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.ClinicAPi.Presentation.Api PreferredExecutionTarget="/Users/mcbook/Desktop/Q.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

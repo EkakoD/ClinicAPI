@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+Y+DrFuWvAhxGoeZiMv1tj6jMJGlpLNiLN1GoX5X37Y=",
+  "Hash": "fQEZAnfk6PuAlB5PxRd/L0EiMFE6uHtyUTeN4k0cP1E=",
   "Source": "ClinicAPi.Presentation.Api",
   "BasePath": "_content/ClinicAPi.Presentation.Api",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ClinicAPi.Presentation.Api/wwwroot",
       "Source": "ClinicAPi.Presentation.Api",
-      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "ContentRoot": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
       "BasePath": "_content/ClinicAPi.Presentation.Api",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/cv/dd.png",
+      "Identity": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/cv/dd.png",
       "SourceId": "ClinicAPi.Presentation.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "ContentRoot": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
       "BasePath": "_content/ClinicAPi.Presentation.Api",
       "RelativePath": "17/cv/dd.png",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot/17/cv/dd.png"
     },
     {
-      "Identity": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/images/dd.png",
+      "Identity": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/images/dd.png",
       "SourceId": "ClinicAPi.Presentation.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "ContentRoot": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
       "BasePath": "_content/ClinicAPi.Presentation.Api",
       "RelativePath": "17/images/dd.png",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot/17/images/dd.png"
     },
     {
-      "Identity": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/20/cv/972778_c852_4.jpeg",
+      "Identity": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/20/cv/972778_c852_4.jpeg",
       "SourceId": "ClinicAPi.Presentation.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "ContentRoot": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
       "BasePath": "_content/ClinicAPi.Presentation.Api",
       "RelativePath": "20/cv/972778_c852_4.jpeg",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot/20/cv/972778_c852_4.jpeg"
     },
     {
-      "Identity": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/20/images/9_sql-server-management-studio-mac.jpeg",
+      "Identity": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/20/images/9_sql-server-management-studio-mac.jpeg",
       "SourceId": "ClinicAPi.Presentation.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "ContentRoot": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
       "BasePath": "_content/ClinicAPi.Presentation.Api",
       "RelativePath": "20/images/9_sql-server-management-studio-mac.jpeg",
       "AssetKind": "All",

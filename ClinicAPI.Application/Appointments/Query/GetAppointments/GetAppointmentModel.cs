@@ -9,6 +9,7 @@ namespace ClinicAPI.Application.Appointments.Query.GetAppointments
         public int DoctorId { get; set; }
         public int PatientId { get; set; }
         public DateTime Date { get; set; }
+        public string Comment { get; set; }
     }
 }
 

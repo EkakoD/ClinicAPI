@@ -2,24 +2,25 @@
 using System.Data.SqlClient;
 using System.Reflection;
 using ClinicAPI.Infrastructure.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace ClinicAPI.Infrastructure.Repositories
 {
     public class BaseRepository : IBaseRepository
 
     {
-        //private ConfigurationManager _config;
-        string _connectionString => "Server=localhost;Database=Clinic;User Id=sa;Password=reallyStrongPwd123;";
-        public BaseRepository()
+        private readonly IConfiguration _config;
+        //string _connectionString => "Server=localhost;Database=Clinic;User Id=sa;Password=reallyStrongPwd123;";
+        public BaseRepository(IConfiguration config)
         {
-            //config = config;
+            _config = config;
         }
         public async Task<int> CreateOrUpdate<T>(string procedureName, dynamic model) where T : class
         {
             try
             {
                 int id = 0;
-                using (SqlConnection connection = new SqlConnection(_connectionString))
+                using (SqlConnection connection = new SqlConnection(_config.GetConnectionString("ClinicDatabase")))
                 {
                     connection.Open();
 
@@ -53,7 +54,7 @@ namespace ClinicAPI.Infrastructure.Repositories
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
+                using (SqlConnection connection = new SqlConnection(_config.GetConnectionString("ClinicDatabase")))
                 {
                     connection.Open();
                     using (SqlCommand cmd = new SqlCommand(procedureName, connection))
@@ -103,7 +104,7 @@ namespace ClinicAPI.Infrastructure.Repositories
             {
                 List<T> resultList = new List<T>();
 
-                using (SqlConnection connection = new SqlConnection(_connectionString))
+                using (SqlConnection connection = new SqlConnection(_config.GetConnectionString("ClinicDatabase")))
                 {
                     connection.Open();
                     using (SqlCommand cmd = new SqlCommand(procedureName, connection))

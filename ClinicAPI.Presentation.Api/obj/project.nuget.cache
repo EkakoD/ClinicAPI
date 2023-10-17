@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ymKIL/Y879ldCYLs6sXRDsUtSa3azzTG9JBBY4HdIlz7y7Q/J8U5HmiuvvNT+ivlnEUG5xsVFSQ7Qj9NtjSehA==",
+  "dgSpecHash": "5VDVrxnWOwl0E+k+v+1lGAR8dAdbK+rEiJekRLCSwVX/6buBt/gI8BbMbJytHvJN3doJ7xdXN3q4+9hSkXWCrw==",
   "success": true,
-  "projectFilePath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPi.Presentation.Api/ClinicAPi.Presentation.Api.csproj",
+  "projectFilePath": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPi.Presentation.Api/ClinicAPi.Presentation.Api.csproj",
   "expectedPackageFiles": [
     "/Users/mcbook/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
     "/Users/mcbook/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

@@ -34,6 +34,7 @@
     <None Remove="Users\Command\DeleteDoctor\" />
     <None Remove="Files\" />
     <None Remove="Appointments\Query\GetAppointments\" />
+    <None Remove="Appointments\Command\UpdateAppointment\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Users\Query\" />
@@ -57,6 +58,7 @@
     <Folder Include="Users\Command\DeleteDoctor\" />
     <Folder Include="Files\" />
     <Folder Include="Appointments\Query\GetAppointments\" />
+    <Folder Include="Appointments\Command\UpdateAppointment\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />

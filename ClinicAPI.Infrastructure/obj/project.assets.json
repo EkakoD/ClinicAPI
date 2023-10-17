@@ -986,11 +986,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
+      "projectUniqueName": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
       "projectName": "ClinicAPI.Infrastructure",
-      "projectPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
+      "projectPath": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
       "packagesPath": "/Users/mcbook/.nuget/packages/",
-      "outputPath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/obj/",
+      "outputPath": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mcbook/.nuget/NuGet/NuGet.Config"

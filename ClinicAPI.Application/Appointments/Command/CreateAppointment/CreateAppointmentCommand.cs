@@ -5,7 +5,7 @@ using MediatR;
 
 namespace ClinicAPI.Application.Appointments.Command.CreateAppointment
 {
-	public class CreateAppointmentCommand :MapFrom<CreateAppointmentModel>, IRequest<IResponse<string>>
+	public class CreateAppointmentCommand : IRequest<IResponse<string>>
 	{
         public int DoctorId { get; set; }
         public int ClientId { get; set; }

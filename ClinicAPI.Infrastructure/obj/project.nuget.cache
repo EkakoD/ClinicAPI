@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X+ZIpQsE6vyE2f8qqS9Tt+psZj9ynjBkhMke/VS0k9nmTITBMXdx4DsK231lLABy2/mr5xkJA+YzBExzRUFKOg==",
+  "dgSpecHash": "XQQbqSwICs+SRoZtEK/R3b/GIcSAib49bpeEdrTyEt87cG/A22RLOpWdEgx2qLYWdQ6NFmUyS9vTTqVh3VjWxA==",
   "success": true,
-  "projectFilePath": "/Users/mcbook/Desktop/ClinicProject/back/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
+  "projectFilePath": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Infrastructure/ClinicAPI.Infrastructure.csproj",
   "expectedPackageFiles": [
     "/Users/mcbook/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.11/microsoft.aspnetcore.cryptography.internal.7.0.11.nupkg.sha512",
     "/Users/mcbook/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/7.0.11/microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512",

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ClinicAPI.Application.Appointments.Command.CreateAppointment;
 using ClinicAPI.Application.Appointments.Command.DeleteAppointment;
+using ClinicAPI.Application.Appointments.Command.UpdateAppointment;
 using ClinicAPI.Application.Appointments.Query.GetAppointments;
 using ClinicAPI.Application.Appointments.Query.GetAppointmentTimes;
 using MediatR;
@@ -36,6 +37,14 @@ namespace ClinicAPi.Presentation.Api.Controllers
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> DeleteAppointment([FromQuery] DeleteAppointmentCommand model)
+        {
+            var result = await _mediator.Send(model);
+            return Execute(result);
+        }
+        [HttpPut]
+        [Authorize]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> UpdateAppointment([FromBody] UpdateAppointmentCommand model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);
