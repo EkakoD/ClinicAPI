@@ -6,7 +6,7 @@ namespace ClinicAPI.Application.Appointments.Command.UpdateAppointment
 {
     public class UpdateAppointmentCommand: IRequest<IResponse<string>>
     {
-        public int AppointmentId { get; set; }
+        public int Id { get; set; }
         public string Comment { get; set; }
     }
 }

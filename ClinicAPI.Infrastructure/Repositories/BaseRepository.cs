@@ -38,7 +38,10 @@ namespace ClinicAPI.Infrastructure.Repositories
                         cmd.Parameters.Add(outputParam);
 
                         cmd.ExecuteNonQuery();
-                        id = (int)outputParam.Value;
+                        if (outputParam.Value != DBNull.Value)
+                        {
+                            id = (int)outputParam.Value;
+                        }
                     }
                 }
                 return id;

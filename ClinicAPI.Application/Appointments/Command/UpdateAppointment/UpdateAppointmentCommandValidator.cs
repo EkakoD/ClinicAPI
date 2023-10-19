@@ -7,7 +7,7 @@ namespace ClinicAPI.Application.Appointments.Command.UpdateAppointment
     {
         public UpdateAppointmentCommandValidator()
         {
-            RuleFor(x => x.AppointmentId).NotEmpty().WithMessage("ჯავშანი არ უნდა იყოს ცარიელი");
+            RuleFor(x => x.Id).NotEmpty().WithMessage("ჯავშანი არ უნდა იყოს ცარიელი");
             RuleFor(x => x.Comment).NotEmpty().WithMessage("კომენტარი არ უნდა იყოს ცარიელი");
 
         }

@@ -1,24 +1,43 @@
 ﻿<Properties StartupConfiguration="{58F068EB-F236-4803-90A4-CF658A26426D}|https">
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ClinicAPI.Infrastructure/Repositories/BaseRepository.cs">
     <Files>
-      <File FileName="ClinicAPI.Infrastructure/Repositories/BaseRepository.cs" Line="22" Column="1" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/UpdateAppointment/UpdateAppointmentCommand.cs" Line="7" Column="18" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/UpdateAppointment/UpdateAppointmentCommandHandler.cs" Line="26" Column="1" />
+      <File FileName="ClinicAPI.Infrastructure/Repositories/BaseRepository.cs" Line="40" Column="1" />
+      <File FileName="ClinicAPI.Presentation.Api/Controllers/AppointmentsController.cs" Line="47" Column="83" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/UpdateAppointment/UpdateAppointmentCommandValidator.cs" Line="10" Column="30" />
+      <File FileName="ClinicAPI.Application/Appointments/Command/DeleteAppointment/DeleteAppointmentCommandHandler.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ClinicAPI" expanded="True">
-            <Node name="ClinicAPI.Application" expanded="True" />
+            <Node name="ClinicAPI.Application" expanded="True">
+              <Node name="Appointments" expanded="True">
+                <Node name="Command" expanded="True">
+                  <Node name="CreateAppointment" expanded="True" />
+                  <Node name="DeleteAppointment" expanded="True">
+                    <Node name="DeleteAppointmentCommandHandler.cs" selected="True" />
+                  </Node>
+                  <Node name="UpdateAppointment" expanded="True" />
+                </Node>
+                <Node name="Query" expanded="True">
+                  <Node name="GetAppointments" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Users" expanded="True">
+                <Node name="Command" expanded="True">
+                  <Node name="CreateClient" expanded="True" />
+                </Node>
+                <Node name="Query" expanded="True" />
+              </Node>
+            </Node>
             <Node name="ClinicAPI.Infrastructure" expanded="True">
               <Node name="Repositories" expanded="True" />
             </Node>
             <Node name="ClinicAPi.Presentation.Api" expanded="True">
-              <Node name="wwwroot" expanded="True">
-                <Node name="17" expanded="True" />
-              </Node>
-              <Node name="appsettings.json">
-                <Node name="appsettings.Development.json" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -26,9 +45,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ClinicAPi.Presentation.Api PreferredExecutionTarget="/Users/mcbook/Desktop/Q.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.ClinicAPi.Presentation.Api PreferredExecutionTarget="/Users/mcbook/Desktop/Q.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
