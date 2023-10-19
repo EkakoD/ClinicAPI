@@ -33,6 +33,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
             var result = await _mediator.Send(model);
             return Execute(result);
         }
+
         [HttpDelete]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -41,6 +42,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
             var result = await _mediator.Send(model);
             return Execute(result);
         }
+
         [HttpPut]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
