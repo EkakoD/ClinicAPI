@@ -20,13 +20,15 @@ namespace ClinicAPI.Application.Users.Query.LogInUser
         public async Task<IResponse<ResponseModel>> Handle(LoginUserForm request, CancellationToken cancellationToken)
         {
             var response = new Response<ResponseModel>();
-            UserDetailsModel userDetails = await _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserByEmail]", new LogInUserModel { Email = request.Email });
-            if (userDetails != null)
+            UserDetailsModel userEmailExist = await _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserByEmail]", new LogInUserModel { Email = request.Email });
+            if (userEmailExist != null)
             {
-                var validatePassword = _jwtService.ValidatePassword(request.Password, userDetails.Password);
+                UserDetailsModel userDetails = await _repository.GetSingle<UserDetailsModel>("[dbo].[GetUserById]", new GetUserDetailsQuery { Id = userEmailExist.Id });
+
+                var validatePassword = _jwtService.ValidatePassword(request.Password, userEmailExist.Password);
                 if (validatePassword)
                 {
-                    var token = _jwtService.GenerateJwtToken(userDetails.Email, userDetails.Id);
+                    var token = _jwtService.GenerateJwtToken(userDetails.Email,userDetails.RoleName, userDetails.Id);
                     response.Data = new ResponseModel { Id = userDetails.Id, Token = token, Role = userDetails.RoleName };
                     response.SuccessData();
                     return response;

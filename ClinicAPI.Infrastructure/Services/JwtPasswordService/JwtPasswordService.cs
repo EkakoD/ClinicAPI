@@ -25,14 +25,15 @@ namespace ClinicAPI.Infrastructure.Services.JwtPasswordService
         }
         #endregion
 
-        public string GenerateJwtToken(string username, long UserId)
+        public string GenerateJwtToken(string username, string role, long UserId)
         {
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Name, username),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, username),
-                new Claim("Id", UserId.ToString())
+                new Claim("Id", UserId.ToString()),
+                new Claim("role",role)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

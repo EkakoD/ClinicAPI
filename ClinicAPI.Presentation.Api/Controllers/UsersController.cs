@@ -13,6 +13,7 @@ using ClinicAPI.Application.Users.Query.GetDoctors;
 using ClinicAPI.Application.Users.Query.GetUserDetails;
 using ClinicAPI.Application.Users.Query.LogInUser;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,6 +46,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
             return Execute(result);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> DeleteDoctor([FromBody] DeleteDoctorCommand model)
@@ -87,7 +89,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetDoctors([FromQuery]GetDoctorsQuery model)
+        public async Task<IActionResult> GetDoctors([FromQuery] GetDoctorsQuery model)
         {
             var result = await _mediator.Send(model);
             return Execute(result);

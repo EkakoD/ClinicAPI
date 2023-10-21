@@ -26,7 +26,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
             _mediator = mediator;
         }
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles ="User")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> CreateAppointment([FromBody] CreateAppointmentCommand model)
         {
@@ -35,7 +35,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
         }
 
         [HttpDelete]
-        [Authorize]
+        [Authorize(Roles="Doctor")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> DeleteAppointment([FromQuery] DeleteAppointmentCommand model)
         {
@@ -44,7 +44,7 @@ namespace ClinicAPi.Presentation.Api.Controllers
         }
 
         [HttpPut]
-        [Authorize]
+        [Authorize(Roles = "Doctor")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> UpdateAppointment([FromBody] UpdateAppointmentCommand model)
         {
