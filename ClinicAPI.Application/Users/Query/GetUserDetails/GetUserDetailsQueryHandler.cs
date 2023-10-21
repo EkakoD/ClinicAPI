@@ -4,6 +4,7 @@ using ClinicAPI.Application.Base;
 using ClinicAPI.Infrastructure.Repositories;
 using ClinicAPI.Infrastructure.Services.JwtPasswordService;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 
 namespace ClinicAPI.Application.Users.Query.GetUserDetails
 {
@@ -12,10 +13,16 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
         private IBaseRepository _repository;
         private IJwtPasswordService _jwtPasswordService;
         private string _wwwroot => Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-        public GetUserDetailsQueryHandler(IBaseRepository repository, IJwtPasswordService jwtPasswordService)
+        private static IHttpContextAccessor _httpContextAccessor;
+
+        public static HttpContext Current => _httpContextAccessor.HttpContext;
+
+        public static string AppBaseUrl => $"{Current.Request.Scheme}://{Current.Request.Host}{Current.Request.PathBase}";
+        public GetUserDetailsQueryHandler(IBaseRepository repository, IJwtPasswordService jwtPasswordService, IHttpContextAccessor httpContextAccessor)
         {
             _repository = repository;
             _jwtPasswordService = jwtPasswordService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<IResponse<UserDetailsModel>> Handle(GetUserDetailsQuery request, CancellationToken cancellationToken)
@@ -27,8 +34,9 @@ namespace ClinicAPI.Application.Users.Query.GetUserDetails
             if (Directory.Exists(folderPath))
             {
                 var imageFolder = new DirectoryInfo(folderPath).GetFiles();
+
                 if (imageFolder.Count() > 0)
-                    details.ImageUrl = imageFolder.FirstOrDefault().FullName;
+                    details.ImageUrl = AppBaseUrl + $"/{details.Id}/images/" + imageFolder.FirstOrDefault().Name;
             }
             response.Data = details;
             response.SuccessData();

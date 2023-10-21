@@ -17,6 +17,22 @@
       "PackagePath": "staticwebassets/20/images/9_sql-server-management-studio-mac.jpeg"
     },
     {
+      "Id": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/22/cv/Eka_Daghelashvili_Resume (2).pdf",
+      "PackagePath": "staticwebassets/22/cv/Eka_Daghelashvili_Resume (2).pdf"
+    },
+    {
+      "Id": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/22/images/972778_c852_4.jpeg",
+      "PackagePath": "staticwebassets/22/images/972778_c852_4.jpeg"
+    },
+    {
+      "Id": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/24/cv/Eka_Daghelashvili_Resume (2).pdf",
+      "PackagePath": "staticwebassets/24/cv/Eka_Daghelashvili_Resume (2).pdf"
+    },
+    {
+      "Id": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/24/images/305857245_8734055016620255_4858950064428323057_n.jpeg",
+      "PackagePath": "staticwebassets/24/images/305857245_8734055016620255_4858950064428323057_n.jpeg"
+    },
+    {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.ClinicAPi.Presentation.Api.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

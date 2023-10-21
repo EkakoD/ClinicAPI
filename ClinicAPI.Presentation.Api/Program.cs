@@ -103,9 +103,9 @@ app.UseCors("AllowSpecificOrigin");
 
 app.UseStaticFiles();
 app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthorization();
-
+app.UseCors();
 app.MapControllers();
 
 app.Run();
