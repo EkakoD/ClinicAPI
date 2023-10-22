@@ -33,14 +33,11 @@ builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton(typeof(IBaseRepository), typeof(BaseRepository));
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("ClinicOrigins", builder =>
-    {
-        builder.AllowAnyHeader()
-           .AllowAnyMethod()
-           .WithOrigins("http://localhost:4200");
-
-        //.WithExposedHeaders("fileName");
-    });
+    options.AddPolicy("ClinicOrigins",
+        builder => builder.WithOrigins("http://localhost:4200")
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials());
 });
 builder.Services.AddSwaggerGen(setup =>
 {
@@ -98,14 +95,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("AllowSpecificOrigin");
 
 
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseCors("ClinicOrigins");
+
+app.UseAuthentication();
+
 app.UseAuthorization();
-app.UseCors();
 app.MapControllers();
 
 app.Run();

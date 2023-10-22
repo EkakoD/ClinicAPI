@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/1022/cv/clinicLogo.png",
+      "PackagePath": "staticwebassets/1022/cv/clinicLogo.png"
+    },
+    {
+      "Id": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/1022/images/305857245_8734055016620255_4858950064428323057_n.jpeg",
+      "PackagePath": "staticwebassets/1022/images/305857245_8734055016620255_4858950064428323057_n.jpeg"
+    },
+    {
       "Id": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/cv/dd.png",
       "PackagePath": "staticwebassets/17/cv/dd.png"
     },

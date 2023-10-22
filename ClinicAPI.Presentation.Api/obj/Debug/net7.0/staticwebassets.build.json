@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Rk63WCQczVTd7saLFmhCVgeWT7qInQfigV48EsZvGH8=",
+  "Hash": "Zom9RqY29VTjZRvIiKP2dJNIYvHMrAp6ivvqYjxJINU=",
   "Source": "ClinicAPi.Presentation.Api",
   "BasePath": "_content/ClinicAPi.Presentation.Api",
   "Mode": "Default",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/1022/cv/clinicLogo.png",
+      "SourceId": "ClinicAPi.Presentation.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "BasePath": "_content/ClinicAPi.Presentation.Api",
+      "RelativePath": "1022/cv/clinicLogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/1022/cv/clinicLogo.png"
+    },
+    {
+      "Identity": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/1022/images/305857245_8734055016620255_4858950064428323057_n.jpeg",
+      "SourceId": "ClinicAPi.Presentation.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPi.Presentation.Api/wwwroot/",
+      "BasePath": "_content/ClinicAPi.Presentation.Api",
+      "RelativePath": "1022/images/305857245_8734055016620255_4858950064428323057_n.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/1022/images/305857245_8734055016620255_4858950064428323057_n.jpeg"
+    },
     {
       "Identity": "/Users/mcbook/Desktop/Clinic/ClinicAPI/ClinicAPI.Presentation.Api/wwwroot/17/cv/dd.png",
       "SourceId": "ClinicAPi.Presentation.Api",

@@ -33,7 +33,7 @@ namespace ClinicAPI.Infrastructure.Services.JwtPasswordService
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, username),
                 new Claim("Id", UserId.ToString()),
-                new Claim("role",role)
+                new Claim(ClaimTypes.Role,role)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
